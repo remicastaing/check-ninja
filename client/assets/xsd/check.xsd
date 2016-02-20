@@ -1,0 +1,87 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ScheduledMaintenance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="HDR_Segment">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="CHG"/>
+              <xs:element type="xs:string" name="ROC"/>
+              <xs:element type="xs:date" name="RDT"/>
+              <xs:element type="xs:date" name="RSD"/>
+              <xs:element type="xs:string" name="OPR"/>
+              <xs:element type="xs:string" name="RON"/>
+              <xs:element type="xs:string" name="WHO"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ScheduledMaintenanceEvents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AID_Segment">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="MFR"/>
+                    <xs:element type="xs:string" name="AMC"/>
+                    <xs:element type="xs:float" name="AIN"/>
+                    <xs:element type="xs:string" name="REG"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="WorkPackageDetails">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="WPI_Segment">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="WPI"/>
+                          <xs:element type="xs:date" name="WOD"/>
+                          <xs:element type="xs:date" name="WOE"/>
+                          <xs:element type="xs:string" name="MCI"/>
+                          <xs:element type="xs:string" name="MCV"/>
+                          <xs:element type="xs:float" name="CTH"/>
+                          <xs:element type="xs:short" name="CTY"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ScheduledMaintenanceDetails" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="MaintenanceItem">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="HCD_Segment">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="HRI"/>
+                                      <xs:element type="xs:string" name="OST"/>
+                                      <xs:element type="xs:date" name="TED"/>
+                                      <xs:element type="xs:string" name="MIR"/>
+                                      <xs:element type="xs:string" name="OII"/>
+                                      <xs:element type="xs:string" name="OTD"/>
+                                      <xs:element type="xs:string" name="MCI" minOccurs="0"/>
+                                      <xs:element type="xs:string" name="MCV" minOccurs="0"/>
+                                      <xs:element type="xs:string" name="OMN" minOccurs="0"/>
+                                      <xs:element type="xs:short" name="ATA"/>
+                                      <xs:element type="xs:float" name="CTH"/>
+                                      <xs:element type="xs:short" name="CTY"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="version"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

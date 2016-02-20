@@ -1,0 +1,88 @@
+<uib-alert  type="danger" dismiss-on-timeout ng-if="uploadedcheck.uncorrelated" close="uploadedcheck.closeAlert()">Le fichier Kardex ne correspond pas avec le fichier BDV.</uib-alert>
+
+
+<div class="row">
+	<div class="col-md-4" >
+		<span class="btn btn-primary btn-lg btn-block btn-file" ng-class="{'btn-success glyphicon glyphicon-ok' : uploadedcheck.checkReady}">
+			Fichier BDV <input type="file" on-read-file="uploadedcheck.loadCheck($fileContent)">
+		</span>
+
+
+	</div>
+	<div class="col-md-4">
+		<span class="btn btn-primary btn-lg btn-block btn-file" ng-disabled="!uploadedcheck.checkReady" ng-class="{'btn-success glyphicon glyphicon-ok' : uploadedcheck.storeReady}">
+			Fichier kardex<input type="file" on-read-file="uploadedcheck.loadKardex($fileContent)">
+		</span>
+	</div>
+	<div class="col-md-4" >
+		<span class="btn btn-primary btn-lg btn-block btn-file" ng-click="uploadedcheck.store()" ng-disabled="!uploadedcheck.storeReady">
+		Sauvegarder
+		</span>
+	</div>
+</div>
+
+<br>
+
+<uib-tabset ng-if="uploadedcheck.check">
+<uib-tab heading="Check" active="true">
+
+<br>
+
+
+<div ng-if="uploadedcheck.check">
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Entête de BDV</div>
+		<div class="panel-body">
+
+			<div class="container-fluid">
+				<div class="col-sm-4" ng-repeat="(key, value) in uploadedcheck.checkhelper.descriptionBDV(uploadedcheck.check)">
+					<div class="row">
+						<div class="col-xs-6 text-right">
+							<strong uib-tooltip="{{uploadedcheck.ata.definition[key].desc}}">{{key}} </strong>
+						</div>
+						<div class="col-xs-6 text-left">
+							{{value}}
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+		</div>
+	</div>
+
+	<div ui-grid="{data : uploadedcheck.checkhelper.MaintenanceItems(uploadedcheck.check) }"></div>
+
+</div>
+
+
+</uib-tab>
+
+
+<uib-tab heading="Kardex" ng-if="uploadedcheck.check.InstalledPart">
+<br>
+
+<div class="grid-container">
+	<div ui-grid="uploadedcheck.gridOptions" ui-grid-tree-view class="myGrid"></div>
+</div>
+
+
+</uib-tab>
+
+<uib-tab heading="Kardex" ng-if="uploadedcheck.check.InstalledPart">
+
+<a class="btn btn-primary" download="{{uploadedcheck.exportFile}}" ng-href="{{uploadedcheck.exportUrl }}">download</a>
+
+</uib-tab>
+
+<uib-tabset>
+
+
+
+
+
+
+
+
+

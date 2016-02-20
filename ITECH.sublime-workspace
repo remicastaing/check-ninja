@@ -1,0 +1,1035 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Main",
+				"MaintenanceItems"
+			],
+			[
+				"Inst",
+				"InstalledPart"
+			],
+			[
+				"Install",
+				"InstalledPartTree"
+			],
+			[
+				"gul",
+				"gulp_front"
+			],
+			[
+				"fron",
+				"frontHook"
+			],
+			[
+				"pro",
+				"projectRootPath"
+			],
+			[
+				"zip",
+				"zipfile"
+			],
+			[
+				"si",
+				"sidenav"
+			],
+			[
+				"nv",
+				"navbar"
+			],
+			[
+				"nav",
+				"navbar"
+			],
+			[
+				"fo",
+				"footer	Tag"
+			],
+			[
+				"faceb",
+				"facebook"
+			],
+			[
+				"en",
+				"enterPassword"
+			],
+			[
+				"log",
+				"logoutButton"
+			],
+			[
+				"Mai",
+				"MainPage"
+			],
+			[
+				"Si",
+				"SignupPage"
+			],
+			[
+				"sign",
+				"signupButton"
+			],
+			[
+				"te",
+				"testUser"
+			],
+			[
+				"lo",
+				"loginPage"
+			],
+			[
+				"veri",
+				"verifiedUser"
+			],
+			[
+				"ver",
+				"verifiedUser"
+			],
+			[
+				"ses",
+				"sessionToken"
+			],
+			[
+				"stra",
+				"strategy"
+			],
+			[
+				"str",
+				"strategies"
+			],
+			[
+				"user",
+				"userId"
+			],
+			[
+				"passw",
+				"passwordResetToken"
+			],
+			[
+				"pa",
+				"passwordResetToken"
+			],
+			[
+				"e",
+				"err"
+			],
+			[
+				"if",
+				"ife	if … else"
+			],
+			[
+				"gz",
+				"gz"
+			],
+			[
+				"bower",
+				"bower_components"
+			],
+			[
+				"use",
+				"userId"
+			],
+			[
+				"ele",
+				"elementClass"
+			],
+			[
+				"gray",
+				"grayCanvas"
+			],
+			[
+				"c",
+				"conteneur"
+			],
+			[
+				"image",
+				"imageHelper"
+			],
+			[
+				"im",
+				"imageHelper"
+			],
+			[
+				"con",
+				"conteneur"
+			],
+			[
+				"ima",
+				"imageData"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "client/components/checkUpload/checkUpload.html",
+			"settings":
+			{
+				"buffer_size": 2089,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "client/index.html",
+			"settings":
+			{
+				"buffer_size": 6013,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/components/check-helper/checkhelper.service.js",
+			"settings":
+			{
+				"buffer_size": 11656,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "client/app/upload/upload.html",
+			"settings":
+			{
+				"buffer_size": 74,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "client/components/checkUpload/checkUpload.controller.js",
+			"settings":
+			{
+				"buffer_size": 1903,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "check.xml",
+			"settings":
+			{
+				"buffer_size": 10260,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "kardex.xml",
+			"settings":
+			{
+				"buffer_size": 485010,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/components/checkUpload/checkgrid.scss",
+			"settings":
+			{
+				"buffer_size": 53,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/components/kardex-helper/kardexhelper.service.js",
+			"settings":
+			{
+				"buffer_size": 780,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "bower.json",
+			"settings":
+			{
+				"buffer_size": 865,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/app/app.js",
+			"settings":
+			{
+				"buffer_size": 431,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "inst",
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 457.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/remi/Workspaces/ITECH",
+		"/Users/remi/Workspaces/ITECH/client",
+		"/Users/remi/Workspaces/ITECH/client/app",
+		"/Users/remi/Workspaces/ITECH/client/app/main",
+		"/Users/remi/Workspaces/ITECH/client/app/upload",
+		"/Users/remi/Workspaces/ITECH/client/assets",
+		"/Users/remi/Workspaces/ITECH/client/assets/xsd",
+		"/Users/remi/Workspaces/ITECH/client/components",
+		"/Users/remi/Workspaces/ITECH/client/components/auth",
+		"/Users/remi/Workspaces/ITECH/client/components/check-helper",
+		"/Users/remi/Workspaces/ITECH/client/components/checkUpload",
+		"/Users/remi/Workspaces/ITECH/client/components/kardex-helper",
+		"/Users/remi/Workspaces/ITECH/client/components/navbar",
+		"/Users/remi/Workspaces/ITECH/client/components/onReadFile"
+	],
+	"file_history":
+	[
+		"/Users/remi/Workspaces/ITECH/client/assets/xsd/check.xsd",
+		"/Users/remi/Workspaces/ITECH/client/components/checkUpload/checkgrid.scss",
+		"/Users/remi/Workspaces/ITECH/client/components/checkUpload/checkUpload.scss",
+		"/Users/remi/Workspaces/ITECH/client/index.html",
+		"/Users/remi/Workspaces/ITECH/client/app/app.js",
+		"/Users/remi/Workspaces/ITECH/client/components/checkdef/checkdef.service.js",
+		"/Users/remi/Workspaces/ITECH/client/components/onReadFile/onReadFile.directive.js",
+		"/Users/remi/Workspaces/ITECH/client/components/checkhelper/checkhelper.service.js",
+		"/Users/remi/Workspaces/ITECH/client/components/checkUpload/checkUpload.directive.js",
+		"/Users/remi/Workspaces/ITECH/client/components/checkhelper/checkhelper.service.spec.js",
+		"/Users/remi/Workspaces/ITECH/client/app/upload/upload.html",
+		"/Users/remi/Workspaces/ITECH/bower.json",
+		"/Users/remi/Workspaces/ITECH/client/app/main/main.html",
+		"/Users/remi/Google Drive/ITECH/AXAA00000432.xml",
+		"/Users/remi/Workspaces/ITECH/client/components/checkUpload/checkUpload.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/app/upload/upload.js",
+		"/Users/remi/Workspaces/ITECH/client/app/upload/upload.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/upload/upload.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/upload/upload.html",
+		"/Users/remi/Workspaces/ITECH/client/components/checkUpload/checkUpload.html",
+		"/Users/remi/Workspaces/ITECH/client/components/navbar/navbar.html",
+		"/Users/remi/Workspaces/ITECH/client/components/navbar/navbar.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/app/app.scss",
+		"/Users/remi/Workspaces/serverless/auth/node_modules/cognito-helper/test/cognito-helper.js",
+		"/Users/remi/Workspaces/serverless/auth/node_modules/cognito-helper/client/scripts/config.js",
+		"/Users/remi/Workspaces/serverless/auth/node_modules/cognito-helper/.env",
+		"/Users/remi/Workspaces/serverless/auth/node_modules/cognito-helper/cognito-lambda.zip",
+		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/lib/models/thing.old.js",
+		"/Users/remi/Workspaces/serverless/test/dynotest/back/modules/serverless-examples/lib/index.js",
+		"/Users/remi/Workspaces/serverless/test/dynotest/back/modules/serverless-examples/rest/handler.js",
+		"/Users/remi/Workspaces/serverless/test/dynotest/back/modules/serverless-examples/rest/s-function.json",
+		"/Users/remi/Workspaces/serverless/test/dynotest/back/modules/serverless-examples/s-module.json",
+		"/Users/remi/Workspaces/serverless/test/dynotest/back/modules/dynamodb-examples/rest/s-function.json",
+		"/Users/remi/Workspaces/serverless/test/dynotest/back/modules/dynamodb-examples/s-module.json",
+		"/Users/remi/Workspaces/serverless/test/dynotest/back/modules/dynamodb-examples/functions/s-function.json",
+		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/lib/index.js",
+		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/testget1/handler.js",
+		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/README.md",
+		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/testget1/s-function.json",
+		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/testget2/s-function.json",
+		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/testget3/s-function.json",
+		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/testpost1/s-function.json",
+		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/testpost2/s-function.json",
+		"/Users/remi/Workspaces/serverless/serverless-examples/back/modules/serverless-examples-module/README.md",
+		"/Users/remi/Workspaces/serverless/serverless-examples/back/modules/serverless-examples-module/package.json",
+		"/Users/remi/Workspaces/serverless/serverless-examples/back/modules/serverless-examples/package.json",
+		"/Users/remi/Workspaces/serverless/serverless-examples/.gitignore",
+		"/Users/remi/Workspaces/serverless/serverless-examples/package.json",
+		"/Users/remi/Workspaces/serverless/serverless-examples/s-module.json",
+		"/Users/remi/Workspaces/serverless/serverless-examples/README.md",
+		"/Users/remi/Workspaces/JAWS/jaws-examples/awsm-examples/awsm.json",
+		"/Users/remi/Workspaces/JAWS/jaws-examples/awsm-examples/package.json",
+		"/Users/remi/Workspaces/JAWS/jaws-examples/awsm-examples/awsm/testget1/awsm.json",
+		"/Users/remi/Workspaces/JAWS/jaws-examples/awsm-examples/awsm/testget2/awsm.json",
+		"/Users/remi/Workspaces/JAWS/jaws-examples/awsm-examples/awsm/testget3/awsm.json",
+		"/Users/remi/Workspaces/JAWS/jaws-examples/awsm-examples/awsm/testpost/awsm.json",
+		"/Users/remi/Workspaces/JAWS/jaws-examples/awsm-examples/README.md",
+		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/example/testget3/index.js",
+		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/example/testget1/awsm.json",
+		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/example/testget2/awsm.json",
+		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/example/testpost/awsm.json",
+		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/gethello2/index.js",
+		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/gethello1/awsm.json",
+		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/gethello/index.js",
+		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/gethello/awsm.json",
+		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/gethello2/awsm.json",
+		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/posthello/index.js",
+		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/hello/index.js",
+		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/posthello/awsm.json",
+		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/hello/awsm.json",
+		"/Users/remi/Workspaces/JAWS/jaws-exemple/awsm-exemple/awsm.json",
+		"/Users/remi/Workspaces/JAWS/JAWS/lib/serve/gulpServe.babel.js",
+		"/Users/remi/Workspaces/JAWS/JAWS/lib/commands/gulpfile.babel.js",
+		"/Users/remi/Workspaces/JAWS/JAWS/lib/utils/gulpFile.js",
+		"/Users/remi/Workspaces/JAWS/JAWS/lib/commands/serve-front.js",
+		"/Users/remi/Workspaces/JAWS/JAWS/lib/index.js",
+		"/Users/remi/Workspaces/JAWS/JAWS_old/lib/config/config.js",
+		"/private/etc/ntp.conf",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/index.html",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/footer/footer.directive.spec.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/bower.json",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/navbar/navbar.html",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/navbar/navbar.scss",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/footer/appFooter.scss",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/footer/appFooter.html",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/ldcFooter/ldcFooter.directive.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/ldcFooter/ldcFooter.directive.spec.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/footer/appFooter.directive.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/cookie-disclaimer/cookie-disclaimer.controller.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/bower_components/angulartics/bower.json",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/sidenav/sidenav.controller.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/app/account/account.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/navbar/navbar.directive.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/sidenav/sidenav.directive.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/skeleton/skeleton.directive.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/skeleton/skeleton.html",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/app/app.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/signup/signup.html",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/sidenav/sidenav.html",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/app/app.scss",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/appheader/appheader.directive.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/hotjar_google.html",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/app/main/main.scss",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/navbar/navbar_old.html",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/appheader/appheader.html",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/drawer/drawer.html",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/footer/footer.html",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/footer/footer.directive.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/drawer/drawer.directive.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/drawer/drawer.controller.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/footer/footer.scss",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/e2e/account/signup/fbsignup.spec.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/login/login.scss",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/signup/signup.scss",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/materialite/bower.json",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/materialite/progressWeel/progressWeel.html",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/materialite/progressWeel/progressWeel.directive.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/materialite/footer/footer.directive.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/materialite/materialite.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/appFooter/appFooter.directive.spec.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/daemonite/base.js",
+		"/Users/remi/Downloads/polymer-starter-kit-light-1.0.1/README.md",
+		"/Users/remi/Downloads/polymer-starter-kit-light-1.0.1/app/bower_components/paper-button/README.md",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/daemonite/wave.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/daemonite/webfont.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/appFooter/footer.directive.js",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/daemonite/base.scss",
+		"/Users/remi/Workspaces/LUDIIC/ludiic/client/app/daemonite/base.js"
+	],
+	"find":
+	{
+		"height": 43.0
+	},
+	"find_in_files":
+	{
+		"height": 119.0,
+		"where_history":
+		[
+			"",
+			"/Users/remi/Workspaces/serverless/auth/node_modules/cognito-helper/client/",
+			"/Users/remi/Workspaces/serverless/auth/node_modules/cognito-helper/client/scriptsaws",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"'text'",
+			"text",
+			"Text",
+			"text",
+			"length",
+			"II",
+			"MaintenanceItem",
+			"ScheduledMaintenance",
+			"check.",
+			",",
+			"tooltip",
+			"',",
+			"subParts",
+			"{\"MaintenanceItem\"",
+			"MaintenanceItem",
+			"ScheduledMaintenanceDetails",
+			"WorkPackageDetails",
+			"{",
+			"Sélect",
+			".js",
+			"tue",
+			"Karde",
+			"Profile",
+			"profile",
+			"Home",
+			"home",
+			"false",
+			"{}",
+			"checkdesc",
+			"checkdef",
+			"''",
+			"false",
+			"def",
+			"false",
+			"''",
+			"-4",
+			"-3",
+			"sm-4",
+			"sm-2",
+			".check",
+			"check",
+			"checkUpload",
+			"CheckUploadCtrl",
+			"Navbar",
+			"navbar",
+			"token",
+			"@",
+			"AWS",
+			"aws-sdk",
+			"functions",
+			"dyna",
+			"var3",
+			"var",
+			"team",
+			"teamId",
+			"Team",
+			"serverless-slack-teams",
+			"jaws",
+			"testget1",
+			"jacob@remicastaing.net",
+			"awsm-users",
+			"dekz",
+			"awsAdminSecretKey",
+			"profiles",
+			".tmp",
+			"yeoman",
+			"Path",
+			"path",
+			"ls",
+			"app.js",
+			"yeoman",
+			"awsAdminKeyId",
+			"setAwsAdminCreds",
+			"log-timestamp",
+			"mytimestamp();",
+			"mytimestamp",
+			"console.log(",
+			"<a",
+			"class=\"grey-text text-lighten-4\"",
+			"<p>",
+			"app",
+			"appFooter",
+			"app",
+			"footer",
+			"waypoints",
+			"name",
+			"footer",
+			"Navbar",
+			"navbar",
+			"Navbar",
+			"navbar",
+			"Drawer",
+			"drawer",
+			"Navbar",
+			"googl",
+			"0-rc.1",
+			"material",
+			"jQuery v1.10.1 ",
+			"footerPush",
+			"fontactive",
+			"WebFontConfig",
+			"footerPush",
+			"footer",
+			"mtlFooter",
+			"myfooter",
+			"footer",
+			"icon",
+			"./fonts/",
+			"icon-menu",
+			"menu-toggle",
+			"icon-lg",
+			"icon-close",
+			"fonts",
+			"../fonts",
+			"?v=1.1.1",
+			"?#iefix&v=1.1.1",
+			"./fonts",
+			"font",
+			"./fonts",
+			"awersome",
+			"fonts",
+			"awesome",
+			"$header ",
+			"$(",
+			"-rc.1",
+			"user",
+			"vm",
+			"color='00CCFF'"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "client/components/checkUpload/checkUpload.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2089,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1756,
+								1756
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 565.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "client/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6013,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 361.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "client/components/check-helper/checkhelper.service.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11656,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								377,
+								377
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "client/app/upload/upload.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 74,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								74,
+								74
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "client/components/checkUpload/checkUpload.controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1903,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								218,
+								218
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "check.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10260,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								542,
+								542
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "kardex.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 485010,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								485010,
+								485010
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 269436.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "client/components/checkUpload/checkgrid.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 53,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								53,
+								53
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "client/components/kardex-helper/kardexhelper.service.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 780,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								142,
+								142
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "bower.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 865,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								571,
+								571
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Material Theme/langs/Bower JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "client/app/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 431,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								243,
+								243
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 99.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "ITECH.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 400.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"node-sass",
+				"node-search-status-bar-item"
+			],
+			[
+				"protrac",
+				"Protractor"
+			]
+		],
+		"width": 1851.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 322.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

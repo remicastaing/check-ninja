@@ -1,0 +1,47 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+@import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+$fa-font-path: "../bower_components/font-awesome/fonts";
+@import '../bower_components/font-awesome/scss/font-awesome';
+
+/**
+ * App-wide Styles
+ */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+// Component styles are injected through grunt
+// injector
+@import 'add_wo/add_wo.scss';
+@import 'admin/admin.scss';
+@import 'check/check.scss';
+@import 'finding/finding.scss';
+@import 'item/item.scss';
+@import 'main/main.scss';
+@import 'store/store.scss';
+@import 'upload/upload.scss';
+@import '../components/check-store/check-store.scss';
+@import '../components/check/check.scss';
+@import '../components/checkUpload/checkUpload.scss';
+@import '../components/checkUpload/checkgrid.scss';
+@import '../components/footer/footer.scss';
+@import '../components/item/item.scss';
+@import '../components/modal/modal.scss';
+// endinjector

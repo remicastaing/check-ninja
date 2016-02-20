@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ScheduledMaintenance version="1">
+    <HDR_Segment>
+        <CHG>T2</CHG>
+        <ROC>ZZZZZ2</ROC>
+        <RDT>2016-01-13</RDT>
+        <RSD>2016-01-13</RSD>
+        <OPR>ZZZZZ</OPR>
+        <RON>ZZZZZ</RON>
+        <WHO>BA118 MONT DE MARSAN</WHO>
+    </HDR_Segment>
+    <ScheduledMaintenanceEvents>
+        <AID_Segment>
+            <MFR>DASSA</MFR>
+            <AMC>AJAA</AMC>
+            <AIN>00E018</AIN>
+            <REG>F-SDAK</REG>
+        </AID_Segment>
+        <WorkPackageDetails>
+            <WPI_Segment>
+                <WPI>AXAA00000432</WPI>
+                <WOD>2015-06-08</WOD>
+                <WOE>0001-01-01</WOE>
+                <MCI>G1</MCI>
+                <MCV>16 MO</MCV>
+                <CTH>8062.50</CTH>
+                <CTY>7581</CTY>
+            </WPI_Segment>
+            <ScheduledMaintenanceDetails>
+                <MaintenanceItem>
+                    <HCD_Segment>
+                        <HRI>AXAA00000432/2/1</HRI>
+                        <OST>true</OST>
+                        <TED>0001-01-01</TED>
+                        <MIR>false</MIR>
+                        <OII>71-51-604</OII>
+                        <OTD>ESSAI  TRANSM ALTITUDE CODEE PAR L'IFF</OTD>
+                        <MCI>G1</MCI>
+                        <MCV>16 MO</MCV>
+                        <OMN>16 MO</OMN>
+                        <ATA>05</ATA>
+                        <CTH>8062.50</CTH>
+                        <CTY>7581</CTY>
+                    </HCD_Segment>
+                </MaintenanceItem>
+            </ScheduledMaintenanceDetails>
+            <ScheduledMaintenanceDetails>
+                <MaintenanceItem>
+                    <HCD_Segment>
+                        <HRI>AXAA00000432/2/18</HRI>
+                        <OST>true</OST>
+                        <TED>0001-01-01</TED>
+                        <MIR>false</MIR>
+                        <OII>02-33-351</OII>
+                        <OTD>PURGE DES CIRCUITS ANEMOMETRIQUES</OTD>
+                        <MCI>G</MCI>
+                        <MCV>1000 FH / 1000 CY / 8 MO</MCV>
+                        <OMN>8 MO</OMN>
+                        <ATA>0520</ATA>
+                        <CTH>8062.50</CTH>
+                        <CTY>7581</CTY>
+                    </HCD_Segment>
+                </MaintenanceItem>
+            </ScheduledMaintenanceDetails>
+            <ScheduledMaintenanceDetails>
+                <MaintenanceItem>
+                    <HCD_Segment>
+                        <HRI>AXAA00000432/2/20</HRI>
+                        <OST>true</OST>
+                        <TED>0001-01-01</TED>
+                        <MIR>false</MIR>
+                        <OII>51-11-601</OII>
+                        <OTD>ESS D'ETANCH DE L'INSTALL ANEMOMETRIQUE</OTD>
+                        <MCI>G</MCI>
+                        <MCV>1000 FH / 1000 CY / 8 MO</MCV>
+                        <OMN>8 MO</OMN>
+                        <ATA>05</ATA>
+                        <CTH>8062.50</CTH>
+                        <CTY>7581</CTY>
+                    </HCD_Segment>
+                </MaintenanceItem>
+            </ScheduledMaintenanceDetails>
+            <ScheduledMaintenanceDetails>
+                <MaintenanceItem>
+                    <HCD_Segment>
+                        <HRI>AXAA00000432/2/24</HRI>
+                        <OST>true</OST>
+                        <TED>0001-01-01</TED>
+                        <MIR>false</MIR>
+                        <OII>16-23-601</OII>
+                        <OTD>VERIF EQUIPEM LIES ETANCH PRESSU CAB</OTD>
+                        <MCI>G1</MCI>
+                        <MCV>16 MO</MCV>
+                        <OMN>16 MO</OMN>
+                        <ATA>05</ATA>
+                        <CTH>8062.50</CTH>
+                        <CTY>7581</CTY>
+                    </HCD_Segment>
+                </MaintenanceItem>
+            </ScheduledMaintenanceDetails>
+            <ScheduledMaintenanceDetails>
+                <MaintenanceItem>
+                    <HCD_Segment>
+                        <HRI>AXAA00000432/2/31</HRI>
+                        <OST>true</OST>
+                        <TED>0001-01-01</TED>
+                        <MIR>false</MIR>
+                        <OII>02-51-306</OII>
+                        <OTD>VISITE JOURNALIERE SIEGES MKF 10LN</OTD>
+                        <MCI>G</MCI>
+                        <MCV>1000 FH / 1000 CY / 8 MO</MCV>
+                        <OMN>8 MO</OMN>
+                        <ATA>0520</ATA>
+                        <CTH>8062.50</CTH>
+                        <CTY>7581</CTY>
+                    </HCD_Segment>
+                </MaintenanceItem>
+            </ScheduledMaintenanceDetails>
+            <ScheduledMaintenanceDetails>
+                <MaintenanceItem>
+                    <HCD_Segment>
+                        <HRI>AXAA00000432/2/32</HRI>
+                        <OST>true</OST>
+                        <TED>0001-01-01</TED>
+                        <MIR>false</MIR>
+                        <OII>02-51-301</OII>
+                        <OTD>VISITE JOURNALIERE AVION</OTD>
+                        <MCI>G</MCI>
+                        <MCV>1000 FH / 1000 CY / 8 MO</MCV>
+                        <OMN>8 MO</OMN>
+                        <ATA>05</ATA>
+                        <CTH>8062.50</CTH>
+                        <CTY>7581</CTY>
+                    </HCD_Segment>
+                </MaintenanceItem>
+            </ScheduledMaintenanceDetails>
+            <ScheduledMaintenanceDetails>
+                <MaintenanceItem>
+                    <HCD_Segment>
+                        <HRI>AXAA00000432/2/33</HRI>
+                        <OST>true</OST>
+                        <TED>0001-01-01</TED>
+                        <MIR>false</MIR>
+                        <OII>02-51-304</OII>
+                        <OTD>VISITE JOURNALIERE CABINE SIEGE MKF 10LN</OTD>
+                        <MCI>G</MCI>
+                        <MCV>1000 FH / 1000 CY / 8 MO</MCV>
+                        <OMN>8 MO</OMN>
+                        <ATA>0520</ATA>
+                        <CTH>8062.50</CTH>
+                        <CTY>7581</CTY>
+                    </HCD_Segment>
+                </MaintenanceItem>
+            </ScheduledMaintenanceDetails>
+            <ScheduledMaintenanceDetails>
+                <MaintenanceItem>
+                    <HCD_Segment>
+                        <HRI>AXAA00000432/2/34</HRI>
+                        <OST>true</OST>
+                        <TED>0001-01-01</TED>
+                        <MIR>false</MIR>
+                        <OII>OEFRA145NSOARM</OII>
+                        <OTD>ATTESTATION SOUTIEN BEARM</OTD>
+                        <ATA>12</ATA>
+                        <CTH>8062.50</CTH>
+                        <CTY>7581</CTY>
+                    </HCD_Segment>
+                </MaintenanceItem>
+            </ScheduledMaintenanceDetails>
+            <ScheduledMaintenanceDetails>
+                <MaintenanceItem>
+                    <HCD_Segment>
+                        <HRI>AXAA00000432/2/35</HRI>
+                        <OST>true</OST>
+                        <TED>0001-01-01</TED>
+                        <MIR>false</MIR>
+                        <OII>37-00.0003-010-003</OII>
+                        <OTD>CONTROLE DES ENSEMBLES OUTILLAGES (ARMT)</OTD>
+                        <ATA>12</ATA>
+                        <CTH>8062.50</CTH>
+                        <CTY>7581</CTY>
+                    </HCD_Segment>
+                </MaintenanceItem>
+            </ScheduledMaintenanceDetails>
+            <ScheduledMaintenanceDetails>
+                <MaintenanceItem>
+                    <HCD_Segment>
+                        <HRI>AXAA00000432/2/36</HRI>
+                        <OST>true</OST>
+                        <TED>0001-01-01</TED>
+                        <MIR>false</MIR>
+                        <OII>OEFRA145NSOAVI</OII>
+                        <OTD>ATTESTATION SOUTIEN BE2</OTD>
+                        <OMN>1000 FH / 1000 CY</OMN>
+                        <ATA>12</ATA>
+                        <CTH>8062.50</CTH>
+                        <CTY>7581</CTY>
+                    </HCD_Segment>
+                </MaintenanceItem>
+            </ScheduledMaintenanceDetails>
+            <ScheduledMaintenanceDetails>
+                <MaintenanceItem>
+                    <HCD_Segment>
+                        <HRI>AXAA00000432/2/37</HRI>
+                        <OST>true</OST>
+                        <TED>0001-01-01</TED>
+                        <MIR>false</MIR>
+                        <OII>37.00-0003-010-003</OII>
+                        <OTD>CONTROLE DES ENSEMBLES OUTILLAGES (AVI)</OTD>
+                        <ATA>12</ATA>
+                        <CTH>8062.50</CTH>
+                        <CTY>7581</CTY>
+                    </HCD_Segment>
+                </MaintenanceItem>
+            </ScheduledMaintenanceDetails>
+            <ScheduledMaintenanceDetails>
+                <MaintenanceItem>
+                    <HCD_Segment>
+                        <HRI>AXAA00000432/2/38</HRI>
+                        <OST>true</OST>
+                        <TED>0001-01-01</TED>
+                        <MIR>false</MIR>
+                        <OII>OEFRA145NSOVEC</OII>
+                        <OTD>ATTESTATION SOUTIEN BE1</OTD>
+                        <ATA>12</ATA>
+                        <CTH>8062.50</CTH>
+                        <CTY>7581</CTY>
+                    </HCD_Segment>
+                </MaintenanceItem>
+            </ScheduledMaintenanceDetails>
+            <ScheduledMaintenanceDetails>
+                <MaintenanceItem>
+                    <HCD_Segment>
+                        <HRI>AXAA00000432/2/39</HRI>
+                        <OST>true</OST>
+                        <TED>0001-01-01</TED>
+                        <MIR>false</MIR>
+                        <OII>37-00-0003-010-003</OII>
+                        <OTD>CONTROLE DES ENSEMBLES OUTILLAGES (VEC)</OTD>
+                        <ATA>12</ATA>
+                        <CTH>8062.50</CTH>
+                        <CTY>7581</CTY>
+                    </HCD_Segment>
+                </MaintenanceItem>
+            </ScheduledMaintenanceDetails>
+        </WorkPackageDetails>
+    </ScheduledMaintenanceEvents>
+</ScheduledMaintenance>
