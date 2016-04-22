@@ -41,6 +41,9 @@
 
 		checkStoreService.getCheck(WPI).then(function(check){
 
+			console.log('check:');
+			console.log(check);
+			
 			vm.header = {
 				WPI : WPI,
 				WHO : check.ScheduledMaintenance.HDR_Segment.WHO,

@@ -23,42 +23,42 @@
         vm.checkhelper = checkhelper;
 
     	vm.loadCheck= function($fileContent){
-        check = x2js.xml_str2json($fileContent);
+            check = x2js.xml_str2json($fileContent);
 
-        vm.check = check
+            vm.check = check
 
-        vm.checkReady = true;
+            vm.checkReady = true;
     	};
 
     	vm.loadKardex= function($fileContent){
-        var kardex = x2js.xml_str2json($fileContent);
+            var kardex = x2js.xml_str2json($fileContent);
 
-        if (_.isEqual(check.ScheduledMaintenance.HDR_Segment, kardex.Kardex.HDR_Segment) && _.isEqual(check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment, kardex.Kardex.AircraftInformation.AID_Segment)) {
-        	vm.check.InstalledPart = kardexhelper.partList(kardex.Kardex.AircraftInformation.InstallDetails.InstalledPart);
-        	vm.gridOptions = {
-	        	data : vm.check.InstalledPart,
-	        	enableSorting: true,
-			    enableFiltering: true,
-			    showTreeExpandNoChildren: true,
-			    columnDefs: [
-			      { field: 'CPI', name: 'ATA', width: '10%' },
-			      { field: 'PDT', name: 'Description', width: '40%' },
-			      { field: 'MPN', name: 'P/N', width: '25%' },
-			      { field: 'SER', name: 'S/N', width: '25%' }
-			    ]
-        	};
-            vm.uncorrelated = false;
-            vm.xml = checkhelper.exportAsXml(vm.check);
-            var blob = new Blob([ vm.xml ], { type : 'text/xml' });
-            vm.exportFile = 'retour_'+ vm.check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.WPI_Segment.WPI + '.xml';
-            vm.exportUrl = (window.URL || window.webkitURL).createObjectURL( blob );
-            vm.storeReady = true;
-        } else{
-        	vm.uncorrelated = true;
+            if (_.isEqual(check.ScheduledMaintenance.HDR_Segment, kardex.Kardex.HDR_Segment) && _.isEqual(check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment, kardex.Kardex.AircraftInformation.AID_Segment)) {
+            	vm.check.InstalledPart = kardexhelper.partList(kardex.Kardex.AircraftInformation.InstallDetails.InstalledPart);
+            	vm.gridOptions = {
+    	        	data : vm.check.InstalledPart,
+    	        	enableSorting: true,
+    			    enableFiltering: true,
+    			    showTreeExpandNoChildren: true,
+    			    columnDefs: [
+    			      { field: 'CPI', name: 'ATA', width: '10%' },
+    			      { field: 'PDT', name: 'Description', width: '40%' },
+    			      { field: 'MPN', name: 'P/N', width: '25%' },
+    			      { field: 'SER', name: 'S/N', width: '25%' }
+    			    ]
+            	};
+                vm.uncorrelated = false;
+                vm.xml = checkhelper.exportAsXml(vm.check);
+                var blob = new Blob([ vm.xml ], { type : 'text/xml' });
+                vm.exportFile = 'retour_'+ vm.check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.WPI_Segment.WPI + '.xml';
+                vm.exportUrl = (window.URL || window.webkitURL).createObjectURL( blob );
+                vm.storeReady = true;
+            } else{
+            	vm.uncorrelated = true;
 
-        	console.log(DeepDiff.diff(check.ScheduledMaintenance.HDR_Segment, kardex.Kardex.HDR_Segment));
-        	console.log(DeepDiff.diff(check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment, kardex.Kardex.AircraftInformation.AID_Segment));
-        };
+            	console.log(DeepDiff.diff(check.ScheduledMaintenance.HDR_Segment, kardex.Kardex.HDR_Segment));
+            	console.log(DeepDiff.diff(check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment, kardex.Kardex.AircraftInformation.AID_Segment));
+            };
         
     	};
 
@@ -67,9 +67,9 @@
 		    console.log('test');
 		  };
 
-        vm.store = function() {
+        vm.save = function() {
             console.log('storing');
-            checkStoreService.store(check);
+            checkStoreService.save(check);
         };
 
 

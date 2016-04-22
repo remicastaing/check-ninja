@@ -1,41 +1,41 @@
 'use strict';
 
 angular.module('itechApp')
-.service('checkStoreService', function ($localForage, checkhelper, $q) {
+.service('checkStoreService', function (Check, $state, checkhelper, $q) {
 
-  var checkStore = $localForage.createInstance({
-   name: 'check-store',
-   driver: 'localStorageWrapper'
-  });
+  //var Check = store.defineResource('check');
 
-  function store(check){
+  function save(check){
 
-    var key = check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.WPI_Segment.WPI;
-
-
-    checkStore.setItem(key,JSON.stringify(check))
+    check.WPI = check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.WPI_Segment.WPI;
+    Check.create(check)
     .then(function(data) {
+      $state.go('checks');
       console.log('stored: ');
+      Check.findAll().then(function (checks) {
+        console.log(checks);
+      });
+
     });
   };
 
 
   function getList(){
 
-    return checkStore.keys();
+    return Check.keys();
 
 
   };
 
 function getOverview(){
-  var overview = [];
 
-  checkStore.keys().then(function(keys){
-    _(keys).forEach(function(key){
-      checkStore.getItem(key)
-      .then(JSON.parse)
-      .then(function(check){
-        var executedItems = 0;
+  var overview = [];
+  console.log('getOverview');
+  Check.findAll().then(function(checks){
+    console.log('checks:');
+    _(checks).forEach(function(check){
+      console.log(check);
+      var executedItems = 0;
         _(check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.ScheduledMaintenanceDetails).forEach(function(MaintenanceItem){
 
           executedItems += MaintenanceItem.MaintenanceItem.HCD_Segment.TED ==='0001-01-01' ? 0 : 1;
@@ -45,22 +45,19 @@ function getOverview(){
           items : check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.ScheduledMaintenanceDetails.length,
           executedItems : executedItems
         });
-
-      });
     });
-  });
-  
+  });  
 
   return overview;
 
 };
 
 function getCheck(WPI){
-  return checkStore.getItem(WPI).then(JSON.parse);
+  return Check.find(WPI);
 };
 
 function deleteCheck(key, cb){
-  return checkStore.removeItem(key, cb);
+  return Check.destroy(key);
 };
 
 function findItem (check, index){
@@ -76,13 +73,13 @@ function getItem(WPI, index){
 
   var getItemByIndex = _.partialRight(findItem, index);
 
-  return  checkStore.getItem(WPI)
+  return  Check.getItem(WPI)
   .then(JSON.parse)
   .then(getItemByIndex);
 }
 
 return {
-  store : store,
+  save : save,
   getList : getList,
   getOverview : getOverview,
   deleteCheck : deleteCheck,
