@@ -24,7 +24,7 @@ angular.module('itechApp')
 
   var overview = [];
 
-  var = Check.detAll();
+  var checks = Check.getAll();
 
   _(checks).forEach(function(check){
 
