@@ -1,0 +1,103 @@
+<div class="panel panel-info">
+  
+  <div class="panel-heading ">
+    <button type="button" class="close" aria-label="Close" ui-sref="check({WPI:editcard.card.WPI})"><span aria-hidden="true">&times;</span></button>
+    <h1 class="panel-title">
+      Card {{editcard.card.type}}<b>{{editcard.card.HRI}}</b>
+    </h1>
+
+
+
+  </div>
+  <div class="panel-body">
+
+
+    <div class="row">
+
+      <form class="form-horizontal col-lg-4 col-md-6" ng-if="editcard.card.OST">
+        <div class="form-group ">
+          <label class="col-sm-6 control-label">Operator Inspection Identifier</label>
+          <div class="col-sm-6">
+            <p class="form-control-static">{{editcard.card.OII}}</p>
+          </div>
+        </div>
+      </form>
+      <form class="form-horizontal col-lg-4 col-md-6" ng-if="!editcard.card.OST">
+        <div class="form-group ">
+          <label class="col-sm-6 control-label">Manufacturer Inspection Identifier</label>
+          <div class="col-sm-6">
+            <p class="form-control-static">{{editcard.card.MII}}</p>
+          </div>
+        </div>
+      </form>
+      <form class="form-horizontal col-lg-4 col-md-6">
+        <div class="form-group ">
+          <label class="col-sm-6 control-label">ATA</label>
+          <div class="col-sm-6">
+            <p class="form-control-static">{{editcard.card.ATA}}</p>
+          </div>
+        </div>
+      </form>
+      <form class="form-horizontal col-lg-4 col-md-6">
+        <div class="form-group ">
+          <label class="col-sm-6 control-label">Operator Main Task Interval</label>
+          <div class="col-sm-6">
+            <p class="form-control-static">{{editcard.card.OMN}}</p>
+          </div>
+        </div>
+      </form>
+      <form class="form-horizontal col-lg-4 col-md-6">
+        <div class="form-group ">
+          <label class="col-sm-6 control-label">Task End Date </label>
+          <div class="col-sm-6">
+            <div class="input-group ">
+              <input type="text" class="form-control" uib-datepicker-popup  ng-model="editcard.card.TED" is-open="editcard.popup['TED'].opened" min-date="editcard.minDate" max-date="editcard.maxDate" datepicker-options="editcard.dateOptions" date-disabled="editcard.disabled(date, mode)" close-text="Close" />
+              <span class="input-group-addon">  
+                <span class="glyphicon glyphicon-calendar" ng-click="editcard.open('TED')"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <label for="OTD">Operator Task Description </label>
+        <pre id="OTD">{{editcard.card.OTD}}</pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label for="MNT">Word done</label>
+        <textarea class="form-control" rows="3" id="MNT"  ng-model="editcard.card.MNT" ></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label for="REM">Remarks</label>
+        <textarea class="form-control" rows="3" id="REM"  ng-model="editcard.card.REM" ></textarea>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="panel-footer ">
+    <div class="pull-right bg-info">
+
+      <button type="button" class="btn   btn-info" ng-click="editcard.save()" >
+        <i class="fa fa-floppy-o fa-1x fa-fw" aria-hidden="true"></i> 
+      </button>
+
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+
+</div>
+

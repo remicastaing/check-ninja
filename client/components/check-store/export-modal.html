@@ -1,0 +1,6 @@
+<div class="modal-header"><h2>Confirmation</h2></div>
+<div class="modal-body">Voulez-vous exporter le BDV {{export.WPI}} ? </div>
+<div class="modal-footer">
+		<a class="btn btn-primary" download="{{export.exportFile}}" ng-href="{{export.exportUrl }}">Exporter</a>
+    <button class="btn" ng-click="export.cancel()">Annuler</button>
+</div>

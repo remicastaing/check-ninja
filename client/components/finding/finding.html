@@ -1,0 +1,51 @@
+<div class="panel panel-info">
+  
+  <div class="panel-heading ">
+    <button type="button" class="close" aria-label="Close" ng-click="editfinding.close()"><span aria-hidden="true">&times;</span></button>
+    <h1 class="panel-title">
+      Finding {{editfinding.finding.OII}}
+    </h1>
+
+
+
+  </div>
+  <div class="panel-body">
+
+    <div class="row">
+      <div class="col-md-12">
+        <label for="OTD">Finding Defect</label>
+        <textarea class="form-control" rows="3" id="OTD"  ng-model="editfinding.finding.FDT" ></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label for="MNT">Corrective Action</label>
+        <textarea class="form-control" rows="3" id="MNT"  ng-model="editfinding.finding.MNT" ></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label for="REM">Remarks</label>
+        <textarea class="form-control" rows="3" id="REM"  ng-model="editfinding.finding.REM" ></textarea>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="panel-footer ">
+    <div class="pull-right bg-info">
+      <button type="button" class="btn   btn-danger " ng-click="editfinding.delete()" >
+        <i class="fa fa-trash fa-1x fa-fw" aria-hidden="true"></i> 
+      </button>
+      <button type="button" class="btn   btn-info" ng-click="editfinding.save()" >
+        <i class="fa fa-floppy-o fa-1x fa-fw" aria-hidden="true"></i> 
+      </button>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+
+</div>
+

@@ -1,16 +1,16 @@
 'use strict';
 
-describe('Controller: ItemCtrl', function () {
+describe('Controller: FindingCtrl', function () {
 
   // load the controller's module
   beforeEach(module('itechApp'));
 
-  var ItemCtrl, scope;
+  var FindingCtrl, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    ItemCtrl = $controller('ItemCtrl', {
+    FindingCtrl = $controller('FindingCtrl', {
       $scope: scope
     });
   }));

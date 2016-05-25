@@ -27,6 +27,14 @@ body {
   background-color: #f5f5f5;
 }
 
+.ui-grid-row {
+  cursor: pointer;
+
+  &:hover .ui-grid-cell {
+    background-color: #CCC;
+  }
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'add_wo/add_wo.scss';
@@ -36,12 +44,17 @@ body {
 @import 'item/item.scss';
 @import 'main/main.scss';
 @import 'store/store.scss';
+@import 'test/test.scss';
 @import 'upload/upload.scss';
+@import '../components/card/card.scss';
+@import '../components/champs/champ/champ.scss';
 @import '../components/check-store/check-store.scss';
 @import '../components/check/check.scss';
 @import '../components/checkUpload/checkUpload.scss';
 @import '../components/checkUpload/checkgrid.scss';
+@import '../components/finding-list/finding-list.scss';
+@import '../components/finding/finding.scss';
 @import '../components/footer/footer.scss';
-@import '../components/item/item.scss';
 @import '../components/modal/modal.scss';
+@import '../components/work-order/work-order.scss';
 // endinjector

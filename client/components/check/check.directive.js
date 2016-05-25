@@ -10,7 +10,7 @@
             templateUrl: 'components/check/check.html',
             restrict: 'EA',
             scope: {
-				      WPI: '=wpi'
+				      data: '=data'
 				    },
             controller: 'CheckController',
             controllerAs: 'editcheck',

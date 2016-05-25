@@ -23,20 +23,20 @@
 
 <br>
 
-<uib-tabset ng-if="uploadedcheck.check">
+<uib-tabset ng-if="uploadedcheck.description">
 <uib-tab heading="Check" active="true">
 
 <br>
 
 
-<div ng-if="uploadedcheck.check">
+<div ng-if="uploadedcheck.description">
 
 	<div class="panel panel-default">
 		<div class="panel-heading">Entête de BDV</div>
 		<div class="panel-body">
 
 			<div class="container-fluid">
-				<div class="col-sm-4" ng-repeat="(key, value) in uploadedcheck.checkhelper.descriptionBDV(uploadedcheck.check)">
+				<div class="col-sm-4" ng-repeat="(key, value) in uploadedcheck.description">
 					<div class="row">
 						<div class="col-xs-6 text-right">
 							<strong uib-tooltip="{{uploadedcheck.ata.definition[key].desc}}">{{key}} </strong>
@@ -52,7 +52,7 @@
 		</div>
 	</div>
 
-	<div ui-grid="{data : uploadedcheck.checkhelper.MaintenanceItems(uploadedcheck.check) }"></div>
+	<div ui-grid="uploadedcheck.checkgrid"></div>
 
 </div>
 
@@ -60,19 +60,13 @@
 </uib-tab>
 
 
-<uib-tab heading="Kardex" ng-if="uploadedcheck.check.InstalledPart">
+<uib-tab heading="Kardex" ng-if="uploadedcheck.kardex">
 <br>
 
 <div class="grid-container">
 	<div ui-grid="uploadedcheck.gridOptions" ui-grid-tree-view class="myGrid"></div>
 </div>
 
-
-</uib-tab>
-
-<uib-tab heading="Kardex" ng-if="uploadedcheck.check.InstalledPart">
-
-<a class="btn btn-primary" download="{{uploadedcheck.exportFile}}" ng-href="{{uploadedcheck.exportUrl }}">download</a>
 
 </uib-tab>
 

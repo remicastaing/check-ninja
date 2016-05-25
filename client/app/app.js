@@ -12,10 +12,11 @@ angular.module('itechApp', [
   'ui.bootstrap',
   'validation.match',
   'cb.x2js',
-  'ui.grid', 'ui.grid.treeView', 'ui.bootstrap.datepicker',
+  'ui.grid', 'ui.grid.treeView', 'ui.grid.autoResize',
+  'ui.bootstrap.datepicker',
   'js-data'
 ])
-  .config(function($urlRouterProvider, $locationProvider, DSLocalForageAdapterProvider) {
+  .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
       .otherwise('/');
 
@@ -31,7 +32,9 @@ angular.module('itechApp', [
     });*/
 
     
-  })
-  .run(function (DS, DSLocalForageAdapter) {
-    //DS.registerAdapter('localforage', DSLocalForageAdapter, { default: true });
   });
+  // .run(function (DS) {
+  //   //DS.registerAdapter('localforage', DSLocalForageAdapter, { default: true });
+  //   var adapter = new DSLocalForageAdapter();
+  //   DS.registerAdapter('localstorage',  adapter, { default: true });
+  // });

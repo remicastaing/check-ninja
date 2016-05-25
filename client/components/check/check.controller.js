@@ -5,78 +5,112 @@
 	.module('itechApp')
 	.controller('CheckController', CheckController);
 
-	var WPI;  
-	function CheckController($scope, checkStoreService, checkhelper, $state)  {
+	var WPI;
+
+	var check;  
+
+	function CheckController($scope, $state, $uibModal)  {
 		var vm = this;
-
-		vm.description = checkhelper.description;
 		
-
-		vm.editable = {};
 		vm.gridOptions = {};
-		WPI = $scope.WPI;
+		check = $scope.data;
 
-		vm.popup2 = {
-	    opened: false
-	  };
-		vm.open2 = function() {
-	    vm.popup2.opened = true;
-	  };
+		WPI = $scope.data.WPI;
 
-	  vm.maxDate = new Date(2020, 5, 22);
-	  vm.minDate = null;
+		vm.popup = {
+			WOE : {opened: false},
+			WOD : {opened: false}
+		};
 
-	  vm.dateOptions = {
-	    formatYear: 'yy',
-	    startingDay: 1
-	  };
+		vm.open = function (field) {
+			vm.popup[field].opened = true;
+		};
 
-	  vm.disabled = function(date, mode) {
-	    return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
-	  };
+		vm.maxDate = new Date(2020, 5, 22);
+		vm.minDate = null;
 
-	  vm.editRow = function (grid, row) {
-		    $state.go('item', {WPI:row.entity.WPI, type: row.entity.type, index : row.entity.index });
+		vm.dateOptions = {
+			formatYear: 'yy',
+			startingDay: 1
+		};
+
+		vm.disabled = disabledCalendar;
+
+		vm.editRow = function (grid, row) {
+			$state.go('item', {WPI:WPI, type: row.entity.type, index : row.entity.index });
+		};
+
+		vm.exportRow = function() {
+			$uibModal.open({
+				templateUrl: 'components/check/export-modal.html',
+				controller: 'ExportCheckModalInstanceCtrl',
+				controllerAs: 'export',
+				resolve: {
+					check: function () { return check;}
+				}
+			});
 		}
 
-		checkStoreService.getCheck(WPI).then(function(check){
+		vm.delete = function() {
+			$uibModal.open({
+				templateUrl: 'components/check/delete-modal.html',
+				controller: 'DeleteCheckModalInstanceCtrl',
+				controllerAs: 'delete',
+				resolve: {
+					WPI: function () { return WPI;}
+				}
+			});
+		};
 
-			console.log('check:');
-			console.log(check);
-			
-			vm.header = {
-				WPI : WPI,
-				WHO : check.ScheduledMaintenance.HDR_Segment.WHO,
-				AIN : check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment.AIN,
-				REG : check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment.REG,
-				WOD : check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment.WOD,
-			}; 
-			vm.editable.WOD = true;
+		vm.save = function() {
+			check.WPI_Segment.DSUpdate(check.WPI_Segment)
+			.then(function(data){
+			},
+			function(err){console.log(err);});
+		};
 
-			var MaintenanceItems = checkhelper.MaintenanceItems(check, true);
+		vm.HDR_Segment = check.HDR_Segment;
+		vm.AID_Segment = check.AID_Segment;
+		vm.WPI_Segment = check.WPI_Segment;
+		vm.items = check.maintenanceItemOverview(true);
 
 
-			vm.gridOptions = {
-	      data : MaintenanceItems,
-	      enableSorting: true,
-	      enableFiltering: true,
-	      showTreeExpandNoChildren: true,
-	      columnDefs: [
-	      { field: 'index', displayName: '#', enableHiding: false, maxWidth: 30 },
-	      { field: 'ATA', displayName: 'ATA', enableHiding: false, maxWidth: 60 },
-	      { field: 'MII / OII', displayName: 'MII / OII', enableHiding: false },
-	      { field: 'MTD / OTD', displayName: 'MTD / OTD', enableHiding: false },
-	      { field: 'TED', displayName: 'TED', enableHiding: false, maxWidth: 100  },
-	      { field: 'MIR', displayName: 'MIR', enableHiding: false, cellClass: 'grid-align', cellTemplate: '<div class="center ui-grid-cell-contents"><span class=" glyphicon glyphicon-wrench" ng-if="row.entity[col.field]"></span></div>', maxWidth: 50 },
-	      { field: 'REM', displayName: 'REM', enableHiding: false },
-	      { field: 'edit', displayName: '  ', cellTemplate: 'components/check/buttons.html',enableSorting: false, enableCellEdit: false, enableFiltering: false, enableColumnMenu: false, maxWidth: 40 },
-	      ]
-	    };
 
-		}
+		var edit = ['<div class="ui-grid-cell-contents">',
+		'<button type="button" class="btn btn-default btn-xs" ng-click="grid.appScope.editcheck.editRow(grid, row)">',
+		'<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>',
+		'</button>',
+		'</div>'].join('');
 
-		);
+		var rowTemplate = '<div ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.colDef.name" ng-class="{ \'ui-grid-row-header-cell\': col.isRowHeader  }" ui-grid-cell="" ng-click="grid.appScope.editcheck.editRow(grid, row)" class="ui-grid-cell"></div>';
 
-	};
+		vm.gridOptions = {
+			data :  'editcheck.items',
+			enableSorting: true,
+			enableFiltering: true,
+			enableColumnResizing: true,
+			enableFullRowSelection: true,
+			enableRowSelection: true,
+			rowTemplate: rowTemplate,
+			columnDefs: [
+				{ field: 'index', name: 'index', displayName: '#', enableHiding: false, enableSorting: true, enableFiltering: false, enableColumnMenu: false , width: 30,  },
+				{ field: 'ATA', name: 'ATA', displayName: 'ATA', enableHiding: false, enableSorting: true, enableFiltering: false, enableColumnMenu: false, maxWidth: 80 },
+				{ field: 'Identifier', name: 'Identifier', displayName: 'Identifier', enableHiding: false, enableSorting: true, enableFiltering: true, enableColumnMenu: false },
+				{ field: 'Description', name: 'MTDDescriptionOTD', displayName: 'Description', enableHiding: false, enableSorting: true, enableFiltering: true, enableColumnMenu: false },
+				{ field: 'REM', name: 'REM', displayName: 'REM', enableHiding: false, enableSorting: true, enableFiltering: true, enableColumnMenu: false},
+				{ field: 'TED', name: 'TED', displayName: 'TED', enableHiding: false, enableSorting: true, enableFiltering: false, enableColumnMenu: false, width: 80, cellTemplate: '<div class="ui-grid-cell-contents" style="text-align:center;">{{row.entity.TED | date : "yyyy-MM-dd"}}</div>'},
+				{ field: 'MIR', name: 'MIR', displayName: 'MIR', enableHiding: false, enableSorting: true, enableFiltering: false, enableColumnMenu: false, width: 45, cellTemplate: '<div class="ui-grid-cell-contents" style="text-align:center;"><i class="fa fa-wrench" ng-if="row.entity.MIR" aria-hidden="true"></i></div>'},
+			]
+};
+
+
+
+};
+
+
+
+function disabledCalendar(date, mode) {
+	return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+};
 
 })();

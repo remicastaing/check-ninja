@@ -1,0 +1,98 @@
+<div class="panel panel-info">
+
+<div class="panel-heading ">
+
+  <h1 class="panel-title">
+    <button type="button" class="close" aria-label="Close" ui-sref="check({WPI:editwo.wo.WPI})"><span aria-hidden="true">&times;</span></button>
+    Work Order <b>{{editwo.wo.HRI}}</b>
+  </h1>
+
+
+
+</div>
+<div class="panel-body">
+
+
+  <div class="row">
+
+
+    <form class="form-horizontal col-lg-4 col-md-6">
+      <div class="form-group ">
+        <label class="col-sm-6 control-label">Manufacturer Inspection Identifier</label>
+        <div class="col-sm-6">
+          <p class="form-control-static">{{editwo.wo.TWI}}</p>
+        </div>
+      </div>
+    </form>
+    <form class="form-horizontal col-lg-4 col-md-6">
+      <div class="form-group ">
+        <label class="col-sm-6 control-label">ATA</label>
+        <div class="col-sm-6">
+          <p class="form-control-static">{{editwo.wo.ATA}}</p>
+        </div>
+      </div>
+    </form>
+    <form class="form-horizontal col-lg-4 col-md-6">
+      <div class="form-group ">
+        <label class="col-sm-6 control-label">Operator Main Task Interval</label>
+        <div class="col-sm-6">
+          <p class="form-control-static">{{editwo.wo.OMN}}</p>
+        </div>
+      </div>
+    </form>
+    <form class="form-horizontal col-lg-4 col-md-6">
+      <div class="form-group ">
+        <label class="col-sm-6 control-label">Task End Date </label>
+        <div class="col-sm-6">
+          <div class="input-group ">
+            <input type="text" class="form-control" uib-datepicker-popup  ng-model="editwo.wo.TED" is-open="editwo.popup['TED'].opened" min-date="editwo.minDate" max-date="editwo.maxDate" datepicker-options="editwo.dateOptions" date-disabled="editwo.disabled(date, mode)" close-text="Close" />
+            <span class="input-group-addon">  <span class="glyphicon glyphicon-calendar" ng-click="editwo.open('TED')"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+</br>
+
+
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <label for="FDT">Operator Task Description </label>
+    <pre>{{editwo.wo.FDT}}</pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <label for="MNT">Word done</label>
+    <textarea class="form-control" rows="3" id="MNT"  ng-model="editwo.wo.MNT" ></textarea>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <label for="REM">Remarks</label>
+    <textarea class="form-control" rows="3" id="REM"  ng-model="editwo.wo.REM" ></textarea>
+  </div>
+</div>
+
+</div>
+
+<div class="panel-footer ">
+  <div class="pull-right bg-info">
+
+    <button type="button" class="btn   btn-info" ng-click="editwo.save()" >
+      <i class="fa fa-floppy-o fa-1x fa-fw" aria-hidden="true"></i> 
+    </button>
+
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+
+</div>
+</div>

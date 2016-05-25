@@ -1,0 +1,252 @@
+{
+   "ScheduledMaintenance":{
+      "HDR_Segment":{
+         "CHG":"T",
+         "ROC":"ZZZZZ",
+         "RDT":"2016-01-13",
+         "RSD":"2016-01-13",
+         "OPR":"ZZZZZ",
+         "RON":"ZZZZZ",
+         "WHO":"BA118 MONT DE MARSAN"
+      },
+      "ScheduledMaintenanceEvents":{
+         "AID_Segment":{
+            "MFR":"DASSA",
+            "AMC":"AJAA",
+            "AIN":"00E018",
+            "REG":"F-SDAK"
+         },
+         "WorkPackageDetails":{
+            "WPI_Segment":{
+               "WPI":"AXAA00000432",
+               "WOD":"2015-06-08",
+               "WOE":"0001-01-01",
+               "MCI":"G1",
+               "MCV":"16 MO",
+               "CTH":"8062.50",
+               "CTY":"7581"
+            },
+            "ScheduledMaintenanceDetails":[
+               {
+                  "MaintenanceItem":{
+                     "HCD_Segment":{
+                        "HRI":"AXAA00000432/2/1",
+                        "OST":"true",
+                        "TED":"0001-01-02",
+                        "MIR":"true",
+                        "OII":"71-51-604",
+                        "OTD":"ESSAI  TRANSM ALTITUDE CODEE PAR L'IFF",
+                        "MCI":"G1",
+                        "MCV":"16 MO",
+                        "OMN":"16 MO",
+                        "ATA":"05",
+                        "CTH":"8062.50",
+                        "CTY":"7581"
+                     }
+                  }
+               },
+               {
+                  "MaintenanceItem":{
+                     "HCD_Segment":{
+                        "HRI":"AXAA00000432/2/18",
+                        "OST":"true",
+                        "TED":"0001-01-01",
+                        "MIR":"false",
+                        "OII":"02-33-351",
+                        "OTD":"PURGE DES CIRCUITS ANEMOMETRIQUES",
+                        "MCI":"G",
+                        "MCV":"1000 FH / 1000 CY / 8 MO",
+                        "OMN":"8 MO",
+                        "ATA":"0520",
+                        "CTH":"8062.50",
+                        "CTY":"7581"
+                     }
+                  }
+               },
+               {
+                  "MaintenanceItem":{
+                     "HCD_Segment":{
+                        "HRI":"AXAA00000432/2/20",
+                        "OST":"true",
+                        "TED":"0001-01-01",
+                        "MIR":"false",
+                        "OII":"51-11-601",
+                        "OTD":"ESS D'ETANCH DE L'INSTALL ANEMOMETRIQUE",
+                        "MCI":"G",
+                        "MCV":"1000 FH / 1000 CY / 8 MO",
+                        "OMN":"8 MO",
+                        "ATA":"05",
+                        "CTH":"8062.50",
+                        "CTY":"7581"
+                     }
+                  }
+               },
+               {
+                  "MaintenanceItem":{
+                     "HCD_Segment":{
+                        "HRI":"AXAA00000432/2/24",
+                        "OST":"true",
+                        "TED":"0001-01-01",
+                        "MIR":"false",
+                        "OII":"16-23-601",
+                        "OTD":"VERIF EQUIPEM LIES ETANCH PRESSU CAB",
+                        "MCI":"G1",
+                        "MCV":"16 MO",
+                        "OMN":"16 MO",
+                        "ATA":"05",
+                        "CTH":"8062.50",
+                        "CTY":"7581"
+                     }
+                  }
+               },
+               {
+                  "MaintenanceItem":{
+                     "HCD_Segment":{
+                        "HRI":"AXAA00000432/2/31",
+                        "OST":"true",
+                        "TED":"0001-01-01",
+                        "MIR":"false",
+                        "OII":"02-51-306",
+                        "OTD":"VISITE JOURNALIERE SIEGES MKF 10LN",
+                        "MCI":"G",
+                        "MCV":"1000 FH / 1000 CY / 8 MO",
+                        "OMN":"8 MO",
+                        "ATA":"0520",
+                        "CTH":"8062.50",
+                        "CTY":"7581"
+                     }
+                  }
+               },
+               {
+                  "MaintenanceItem":{
+                     "HCD_Segment":{
+                        "HRI":"AXAA00000432/2/32",
+                        "OST":"true",
+                        "TED":"0001-01-01",
+                        "MIR":"false",
+                        "OII":"02-51-301",
+                        "OTD":"VISITE JOURNALIERE AVION",
+                        "MCI":"G",
+                        "MCV":"1000 FH / 1000 CY / 8 MO",
+                        "OMN":"8 MO",
+                        "ATA":"05",
+                        "CTH":"8062.50",
+                        "CTY":"7581"
+                     }
+                  }
+               },
+               {
+                  "MaintenanceItem":{
+                     "HCD_Segment":{
+                        "HRI":"AXAA00000432/2/33",
+                        "OST":"true",
+                        "TED":"0001-01-01",
+                        "MIR":"false",
+                        "OII":"02-51-304",
+                        "OTD":"VISITE JOURNALIERE CABINE SIEGE MKF 10LN",
+                        "MCI":"G",
+                        "MCV":"1000 FH / 1000 CY / 8 MO",
+                        "OMN":"8 MO",
+                        "ATA":"0520",
+                        "CTH":"8062.50",
+                        "CTY":"7581"
+                     }
+                  }
+               },
+               {
+                  "MaintenanceItem":{
+                     "HCD_Segment":{
+                        "HRI":"AXAA00000432/2/34",
+                        "OST":"true",
+                        "TED":"0001-01-01",
+                        "MIR":"false",
+                        "OII":"OEFRA145NSOARM",
+                        "OTD":"ATTESTATION SOUTIEN BEARM",
+                        "ATA":"12",
+                        "CTH":"8062.50",
+                        "CTY":"7581"
+                     }
+                  }
+               },
+               {
+                  "MaintenanceItem":{
+                     "HCD_Segment":{
+                        "HRI":"AXAA00000432/2/35",
+                        "OST":"true",
+                        "TED":"0001-01-01",
+                        "MIR":"false",
+                        "OII":"37-00.0003-010-003",
+                        "OTD":"CONTROLE DES ENSEMBLES OUTILLAGES (ARMT)",
+                        "ATA":"12",
+                        "CTH":"8062.50",
+                        "CTY":"7581"
+                     }
+                  }
+               },
+               {
+                  "MaintenanceItem":{
+                     "HCD_Segment":{
+                        "HRI":"AXAA00000432/2/36",
+                        "OST":"true",
+                        "TED":"0001-01-01",
+                        "MIR":"false",
+                        "OII":"OEFRA145NSOAVI",
+                        "OTD":"ATTESTATION SOUTIEN BE2",
+                        "OMN":"1000 FH / 1000 CY",
+                        "ATA":"12",
+                        "CTH":"8062.50",
+                        "CTY":"7581"
+                     }
+                  }
+               },
+               {
+                  "MaintenanceItem":{
+                     "HCD_Segment":{
+                        "HRI":"AXAA00000432/2/37",
+                        "OST":"true",
+                        "TED":"0001-01-01",
+                        "MIR":"false",
+                        "OII":"37.00-0003-010-003",
+                        "OTD":"CONTROLE DES ENSEMBLES OUTILLAGES (AVI)",
+                        "ATA":"12",
+                        "CTH":"8062.50",
+                        "CTY":"7581"
+                     }
+                  }
+               },
+               {
+                  "MaintenanceItem":{
+                     "HCD_Segment":{
+                        "HRI":"AXAA00000432/2/38",
+                        "OST":"true",
+                        "TED":"0001-01-01",
+                        "MIR":"false",
+                        "OII":"OEFRA145NSOVEC",
+                        "OTD":"ATTESTATION SOUTIEN BE1",
+                        "ATA":"12",
+                        "CTH":"8062.50",
+                        "CTY":"7581"
+                     }
+                  }
+               },
+               {
+                  "MaintenanceItem":{
+                     "HCD_Segment":{
+                        "HRI":"AXAA00000432/2/39",
+                        "OST":"true",
+                        "TED":"0001-01-01",
+                        "MIR":"false",
+                        "OII":"37-00-0003-010-003",
+                        "OTD":"CONTROLE DES ENSEMBLES OUTILLAGES (VEC)",
+                        "ATA":"12",
+                        "CTH":"8062.50",
+                        "CTY":"7581"
+                     }
+                  }
+               }
+            ]
+         }
+      },
+      "_version":"1"
+   }
+}

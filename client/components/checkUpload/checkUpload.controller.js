@@ -11,32 +11,42 @@
 
 
 
-    function checkUploadController(x2js, ataspechelper, checkhelper, kardexhelper, checkStoreService) {
+    function checkUploadController(x2js, ATA2K, ScheduledMaintenance, Kardex, HCD_Segment, $state) {
     	var vm = this;
     	var check;
     	var kardex;
     	vm.checkReady = false;
         vm.storeReady = false;
 
-    	vm.ata =  ataspechelper;
-
-        vm.checkhelper = checkhelper;
+    	vm.ata =  ATA2K;
 
     	vm.loadCheck= function($fileContent){
             check = x2js.xml_str2json($fileContent);
 
-            vm.check = check
+            vm.description = ScheduledMaintenance.description(check);
+
+            var checkgrid = {};
+
+            checkgrid.data = _.map(check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.ScheduledMaintenanceDetails, function(MaintenanceItem){
+                return HCD_Segment.methods.overview.apply(MaintenanceItem.MaintenanceItem.HCD_Segment);
+            })
+            
+            vm.checkgrid = checkgrid;
 
             vm.checkReady = true;
+
     	};
 
     	vm.loadKardex= function($fileContent){
-            var kardex = x2js.xml_str2json($fileContent);
+            kardex = x2js.xml_str2json($fileContent);
+
+            vm.kardex = kardex;
+
 
             if (_.isEqual(check.ScheduledMaintenance.HDR_Segment, kardex.Kardex.HDR_Segment) && _.isEqual(check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment, kardex.Kardex.AircraftInformation.AID_Segment)) {
-            	vm.check.InstalledPart = kardexhelper.partList(kardex.Kardex.AircraftInformation.InstallDetails.InstalledPart);
+            	var partlist= Kardex.partList(kardex.Kardex.AircraftInformation.InstallDetails.InstalledPart);
             	vm.gridOptions = {
-    	        	data : vm.check.InstalledPart,
+    	        	data : partlist,
     	        	enableSorting: true,
     			    enableFiltering: true,
     			    showTreeExpandNoChildren: true,
@@ -48,10 +58,6 @@
     			    ]
             	};
                 vm.uncorrelated = false;
-                vm.xml = checkhelper.exportAsXml(vm.check);
-                var blob = new Blob([ vm.xml ], { type : 'text/xml' });
-                vm.exportFile = 'retour_'+ vm.check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.WPI_Segment.WPI + '.xml';
-                vm.exportUrl = (window.URL || window.webkitURL).createObjectURL( blob );
                 vm.storeReady = true;
             } else{
             	vm.uncorrelated = true;
@@ -68,8 +74,12 @@
 		  };
 
         vm.save = function() {
-            console.log('storing');
-            checkStoreService.save(check);
+
+            ScheduledMaintenance.create(check)
+            .then(function() {
+              return $state.go('checks'); 
+            })
+            ;//.then(Kardex.create(kardex));
         };
 
 

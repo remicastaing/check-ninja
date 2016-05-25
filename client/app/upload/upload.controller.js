@@ -2,11 +2,13 @@
 	
     'use strict';
 
-    angular.module('itechApp')
-    .controller('UploadCtrl', UploadCtrl);
-
     function UploadCtrl() {
 
     }
+
+    angular.module('itechApp')
+    .controller('UploadCtrl', UploadCtrl);
+
+
 
 })();

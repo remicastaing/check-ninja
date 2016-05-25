@@ -1,17 +1,12 @@
 <navbar></navbar>
 <div class="container">
-<div class="page-header">
-	<div class="well">
-	<h1>ITEM {{item.index}} (type: {{item.type}})</h1>
-
-	<item wpi="item.WPI" index="item.index"></item>
 
 
-	</div>
   
+	<card data="item.data" ng-if="item.card"></card>
+	<work-order data="item.data" ng-if="item.wo"></work-order>
+
+	<finding-list data="item.data"></finding-list>
 
 </div>
-
-
-</div>
-<footer></footer>
+ 
