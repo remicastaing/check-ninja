@@ -27,39 +27,53 @@ angular.module('itechApp')
             // foreignKey is the "join" field
             // the name of the field on a comment that points to its parent user
             foreignKey: 'HRI'
+          },
+          PAR_Segment: {
+            // localField is for linking relations
+            // user.comments -> array of comments of the user
+            localField: 'PAR_Segments',
+            // foreignKey is the "join" field
+            // the name of the field on a comment that points to its parent user
+            foreignKey: 'HRI'
+          },
+          IPT_Segment: {
+            // localField is for linking relations
+            // user.comments -> array of comments of the user
+            localField: 'IPT_Segments',
+            // foreignKey is the "join" field
+            // the name of the field on a comment that points to its parent user
+            foreignKey: 'HRI'
           }
         }
       },
       methods: {
       	overview : hdcOverview,
       	toJson: function(){
-          return ATA2K.toJson('HCD_Segment', this);
+          console.log(this);
+          var json = ATA2K.toJson('HCD_Segment', this);
+          if (this.AWR_Segment>0) {
+            json.AWR_Segment = ATA2K.toJson('AWR_Segment', this.AWR_Segment);
+          }
+
+          if (this.NRF_Segments.length>0) {
+            json.NRF_Segment = _.map(this.NRF_Segments).map(function (nrf) {
+              console.log(nrf);
+              return nrf.toJson();
+            });
+          }          
+          
+          return json;
         },
-        // type : function(){
-        //   if (this.MCI) {
-        //     return 'card'
-        //   } else {
-        //     return 'OOP card'
-        //   } 
-        // }
       },
-      computed : {
-        type : ['MCI', 'OST', 'OII', 'MII', function(MCI){
-          if (OST){
-            if (!OII){
-              return "WO";
-            }
-          } else {
-            if (!MII){
-              return "WO";
-            }
+      computed: {
+        // object passed to Object.defineProperty
+        type: {
+          // default is false
+          enumerable: true,
+          get: function () {
+            return this.HRI.split('/')[1];
           }
-          if (MCI) {
-            return 'card';
-          } else {
-            return 'OOP'
-          }
-        }]
+        }
       },
       beforeUpdate : function (Resource, data, cb){
           if (data.AWR_Segment) {
@@ -75,30 +89,38 @@ angular.module('itechApp')
 
 
 
- function hdcOverview(complete){
-
-    complete = typeof complete !== 'undefined' ? complete : false;
-
+ function hdcOverview(){
 
     var HRI = this.HRI.split('/');
 
-    return complete ? {
+    var res =  this.type != 4 ? {
       'type' : HRI[1],
       'index' : HRI[2],
       'HRI' : this.HRI,
+      'WPI' : this.WPI,
       'ATA': this.ATA,
       'Identifier' : this.OST ? this.OII : this.MII,
       'Description' : this.OST ? this.OTD : this.MTD,
       'TED': this.TED,
       'MIR': this.MIR==="true"? true: false,
       'REM': this.REM,
-    } :
+    } : 
     {
+      'type' : HRI[1],
+      'index' : HRI[2],
       'HRI' : this.HRI,
-      'ATA': this.ATA,
-      'Identifier' : this.OST ? this.OII : this.MII,
-      'Description' : this.OST ? this.OTD : this.MTD
-    };
+      'WPI' : this.WPI,
+      'ATA': this.AWR_Segment.ATA,
+      'Identifier' : this.AWR_Segment.TWI,
+      'Description' : this.AWR_Segment.FDT,
+      'TED': this.TED,
+      'MIR': this.MIR==="true"? true: false,
+      'REM': this.AWR_Segment.REM,
+    }
+
+    return res;
+
+
   };
 
 

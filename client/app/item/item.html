@@ -1,10 +1,8 @@
 <navbar></navbar>
 <div class="container">
-
-
   
-	<card data="item.data" ng-if="item.card"></card>
-	<work-order data="item.data" ng-if="item.wo"></work-order>
+	<card data="item.data" ng-if="item.itemType!=4"></card>
+	<work-order data="item.data" ng-if="item.itemType==4"></work-order>
 
 	<finding-list data="item.data"></finding-list>
 

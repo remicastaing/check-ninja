@@ -13,9 +13,23 @@
 		var vm = this;
 		
 		vm.gridOptions = {};
-		check = $scope.data;
+  
+    if (typeof $scope.data.then === 'function'){
+      $scope.data.then(function(data){
+        check = data;
+        vm.data = check;
+        vm.items = check.maintenanceItemOverview(true);
+        WPI = $scope.data.WPI;
+        console.log(check);
+      })
+    } else {
+      check = $scope.data;
+      vm.data = check;
+      vm.items = check.maintenanceItemOverview(true);
+      WPI = $scope.data.WPI;
+    }
 
-		WPI = $scope.data.WPI;
+		
 
 		vm.popup = {
 			WOE : {opened: false},
@@ -37,7 +51,7 @@
 		vm.disabled = disabledCalendar;
 
 		vm.editRow = function (grid, row) {
-			$state.go('item', {WPI:WPI, type: row.entity.type, index : row.entity.index });
+			$state.go('item', {WPI: row.entity.WPI, type: row.entity.type, index : row.entity.index });
 		};
 
 		vm.exportRow = function() {
@@ -57,7 +71,7 @@
 				controller: 'DeleteCheckModalInstanceCtrl',
 				controllerAs: 'delete',
 				resolve: {
-					WPI: function () { return WPI;}
+					WPI: function () { return check.WPI;}
 				}
 			});
 		};
@@ -69,10 +83,8 @@
 			function(err){console.log(err);});
 		};
 
-		vm.HDR_Segment = check.HDR_Segment;
-		vm.AID_Segment = check.AID_Segment;
-		vm.WPI_Segment = check.WPI_Segment;
-		vm.items = check.maintenanceItemOverview(true);
+
+
 
 
 

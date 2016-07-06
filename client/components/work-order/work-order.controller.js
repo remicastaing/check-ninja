@@ -7,7 +7,7 @@
     .module('itechApp')
     .controller('WorkOrderController', WorkOrderController);
 
-  function WorkOrderController($scope)  {
+  function WorkOrderController($scope, AWR_Segment)  {
     var vm = this;
 		
     var wo;
@@ -41,6 +41,7 @@
     vm.disabled = disabledCalendar;
 
     vm.save = function() {
+      console.log(wo);
       wo.DSUpdate(wo)
       .then(function(data){
       },

@@ -5,28 +5,28 @@ angular.module('itechApp')
   return store.defineResource({
     name: 'AWR_Segment',
     idAttribute : 'HRI', 
-    relations: {
-      belongsTo: {
-        ScheduledMaintenance: {
-            // localField is for linking relations
-            // user.profile -> profile of the user
-            localField: 'ScheduledMaintenance',
-            // foreignKey is the "join" field
-            // the name of the field on a profile that points to its parent user
-            localKey: 'WPI'
-          }
-        },
-        hasMany: {
-          NRF_Segment: {
-            // localField is for linking relations
-            // user.comments -> array of comments of the user
-            localField: 'NRF_Segments',
-            // foreignKey is the "join" field
-            // the name of the field on a comment that points to its parent user
-            foreignKey: 'HRI'
-          }
-        }
-      },
+    // relations: {
+    //   belongsTo: {
+    //     HCD_Segment: {
+    //         // localField is for linking relations
+    //         // user.profile -> profile of the user
+    //         localField: 'HCD_Segment',
+    //         // foreignKey is the "join" field
+    //         // the name of the field on a profile that points to its parent user
+    //         localKey: 'HRI'
+    //       }
+    //     },
+    //     // hasMany: {
+    //     //   NRF_Segment: {
+    //     //     // localField is for linking relations
+    //     //     // user.comments -> array of comments of the user
+    //     //     localField: 'NRF_Segments',
+    //     //     // foreignKey is the "join" field
+    //     //     // the name of the field on a comment that points to its parent user
+    //     //     foreignKey: 'HRI'
+    //     //   }
+    //     // }
+    //   },
       methods: {
         overview : awrOverview,
         toJson: function(){

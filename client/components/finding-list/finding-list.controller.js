@@ -11,13 +11,13 @@ angular.module('itechApp')
     var vm = this;
 
     var card;
-  
 
   	vm.data = [];
     if (typeof $scope.data.then === 'function'){
       $scope.data.then(function(data){
         card = data;
         vm.data = card;
+        console.log(card);
       }, function(err){console.log(err)})
     } else {
       card = $scope.data;
@@ -65,6 +65,7 @@ angular.module('itechApp')
     		FDT: row.entity.FDT,
     		MNT: row.entity.MNT,
     		RMK: row.entity.RMK,
+        WPI : row.entity.WPI,
     		id : row.entity.id
     	}
     }

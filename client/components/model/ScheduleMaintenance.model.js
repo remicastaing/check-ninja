@@ -38,7 +38,31 @@ angular.module('itechApp')
             // foreignKey is the "join" field
             // the name of the field on a comment that points to its parent user
             foreignKey: 'WPI'
-          }
+          },
+        NRF_Segment: {
+            // localField is for linking relations
+            // user.comments -> array of comments of the user
+            localField: 'NRF_Segments',
+            // foreignKey is the "join" field
+            // the name of the field on a comment that points to its parent user
+            foreignKey: 'WPI'
+          },
+        PAR_Segment: {
+            // localField is for linking relations
+            // user.comments -> array of comments of the user
+            localField: 'PAR_Segments',
+            // foreignKey is the "join" field
+            // the name of the field on a comment that points to its parent user
+            foreignKey: 'WPI'
+          },
+        IPT_Segment: {
+            // localField is for linking relations
+            // user.comments -> array of comments of the user
+            localField: 'IPT_Segments',
+            // foreignKey is the "join" field
+            // the name of the field on a comment that points to its parent user
+            foreignKey: 'WPI'
+          },
         }
       },
       methods: {
@@ -71,9 +95,11 @@ angular.module('itechApp')
     check.ScheduledMaintenance.HDR_Segment.id = WPI;
     check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment.id = WPI;
 
-    var hcd = _.filter(check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.ScheduledMaintenanceDetails, function(ScheduledMaintenanceDetails){
-      return !ScheduledMaintenanceDetails.MaintenanceItem.HCD_Segment.AWR_Segment;
-    })
+    // var hcd = _.filter(check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.ScheduledMaintenanceDetails, function(ScheduledMaintenanceDetails){
+    //   return !ScheduledMaintenanceDetails.MaintenanceItem.HCD_Segment.AWR_Segment;
+    // })
+
+    var hcd = check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.ScheduledMaintenanceDetails;
 
     var awr = _.filter(check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.ScheduledMaintenanceDetails, function(ScheduledMaintenanceDetails){
       return ScheduledMaintenanceDetails.MaintenanceItem.HCD_Segment.AWR_Segment;
@@ -88,7 +114,6 @@ angular.module('itechApp')
 
     var createAwrSegments= _.map(awr, function(ScheduledMaintenanceDetails){
       var awrSegment = ScheduledMaintenanceDetails.MaintenanceItem.HCD_Segment.AWR_Segment;
-      awrSegment.WPI = WPI;
       return AWR_Segment.create(awrSegment);
     });
 
@@ -166,16 +191,13 @@ function iterateCountPerformedItem(memo, HCD_Segment){
   return memo + 1-1*(HCD_Segment.TED ===null);
 }
 
-function maintenanceItemOverview (complete){
-  complete = typeof complete !== 'undefined' ? complete : false;
+function maintenanceItemOverview (){
+
 
   var MaintenanceItems = [];
 
   _.forIn(this.HCD_Segments,
-    function(hcd_segment, key) {MaintenanceItems.push(hcd_segment.overview(complete));});
-
-  _.forIn(this.AWR_Segments,
-    function(awr_segment, key) {MaintenanceItems.push(awr_segment.overview(complete));});
+    function(hcd_segment, key) {MaintenanceItems.push(hcd_segment.overview());});
 
   return MaintenanceItems;
 

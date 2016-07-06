@@ -20,7 +20,7 @@
       <div class="form-group ">
         <label class="col-sm-6 control-label">Manufacturer Inspection Identifier</label>
         <div class="col-sm-6">
-          <p class="form-control-static">{{editwo.wo.TWI}}</p>
+          <p class="form-control-static">{{editwo.wo.AWR_Segment.TWI}}</p>
         </div>
       </div>
     </form>
@@ -28,7 +28,7 @@
       <div class="form-group ">
         <label class="col-sm-6 control-label">ATA</label>
         <div class="col-sm-6">
-          <p class="form-control-static">{{editwo.wo.ATA}}</p>
+          <p class="form-control-static">{{editwo.wo.AWR_Segment.ATA}}</p>
         </div>
       </div>
     </form>
@@ -36,7 +36,7 @@
       <div class="form-group ">
         <label class="col-sm-6 control-label">Operator Main Task Interval</label>
         <div class="col-sm-6">
-          <p class="form-control-static">{{editwo.wo.OMN}}</p>
+          <p class="form-control-static">{{editwo.wo.AWR_Segment.OMN}}</p>
         </div>
       </div>
     </form>
@@ -62,21 +62,21 @@
 <div class="row">
   <div class="col-md-12">
     <label for="FDT">Operator Task Description </label>
-    <pre>{{editwo.wo.FDT}}</pre>
+    <pre>{{editwo.wo.AWR_Segment.FDT}}</pre>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-12">
     <label for="MNT">Word done</label>
-    <textarea class="form-control" rows="3" id="MNT"  ng-model="editwo.wo.MNT" ></textarea>
+    <textarea class="form-control" rows="3" id="MNT"  ng-model="editwo.wo.AWR_Segment.MNT" ></textarea>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-12">
     <label for="REM">Remarks</label>
-    <textarea class="form-control" rows="3" id="REM"  ng-model="editwo.wo.REM" ></textarea>
+    <textarea class="form-control" rows="3" id="REM"  ng-model="editwo.wo.AWR_Segment.REM" ></textarea>
   </div>
 </div>
 

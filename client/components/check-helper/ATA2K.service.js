@@ -152,16 +152,6 @@ ATA : {
   type : 'int',
   mandatory : false
 },
-MNT : {
-  desc : 'Maintenance Action Text',
-  type : 'string',
-  mandatory : false
-},
-REM : {
-  desc : 'Commentaire',
-  type : 'string',
-  mandatory : true
-},
 CTH : {
   desc : 'Aircraft Cumulative Total Flight Hours',
   type : '',
@@ -171,6 +161,16 @@ CTY : {
   desc : 'Aircraft Cumulative Total Flight Cycles',
   type : '',
   mandatory : false
+},
+MNT : {
+  desc : 'Maintenance Action Text',
+  type : 'string',
+  mandatory : false
+},
+REM : {
+  desc : 'Commentaire',
+  type : 'string',
+  mandatory : true
 }
 },
 NRF_Segment : {
