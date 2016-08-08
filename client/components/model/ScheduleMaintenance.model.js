@@ -3,7 +3,7 @@
 var ScheduledMaintenance
 
 angular.module('itechApp')
-.factory('ScheduledMaintenance', function (store, HDR_Segment, AID_Segment, WPI_Segment, HCD_Segment, AWR_Segment, ATA2K, x2js) {
+.factory('ScheduledMaintenance', function (store, HDR_Segment, AID_Segment, WPI_Segment, HCD_Segment, AWR_Segment, NRF_Segment, PAR_Segment, IPT_Segment, ATA2K, Kardex, x2js) {
   ScheduledMaintenance= store.defineResource({
     name: 'ScheduledMaintenance',
     idAttribute : 'WPI',
@@ -20,7 +20,11 @@ angular.module('itechApp')
         WPI_Segment: {
           localKey: 'WPI',
           localField: 'WPI_Segment'
-        }                
+        },
+        Kardex: {
+          localKey: 'AIN',
+          localField: 'Kardex'
+        },                       
       },
       hasMany: {
         HCD_Segment: {
@@ -90,7 +94,8 @@ angular.module('itechApp')
   function beforeCreateScheduledMaintenance(Resource, check, cb){
     var WPI = check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.WPI_Segment.WPI
     var scheduledMaintenance = {
-      WPI : WPI
+      WPI : WPI,
+      AIN : check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment.AIN
     };
     check.ScheduledMaintenance.HDR_Segment.id = WPI;
     check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment.id = WPI;
@@ -101,9 +106,9 @@ angular.module('itechApp')
 
     var hcd = check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.ScheduledMaintenanceDetails;
 
-    var awr = _.filter(check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.ScheduledMaintenanceDetails, function(ScheduledMaintenanceDetails){
-      return ScheduledMaintenanceDetails.MaintenanceItem.HCD_Segment.AWR_Segment;
-    })
+    // var awr = _.filter(check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.ScheduledMaintenanceDetails, function(ScheduledMaintenanceDetails){
+    //   return ScheduledMaintenanceDetails.MaintenanceItem.HCD_Segment.AWR_Segment;
+    // })
 
 
     var createHcdSegments= _.map(hcd, function(ScheduledMaintenanceDetails){
@@ -112,12 +117,12 @@ angular.module('itechApp')
       return HCD_Segment.create(hcdSegment);
     });
 
-    var createAwrSegments= _.map(awr, function(ScheduledMaintenanceDetails){
-      var awrSegment = ScheduledMaintenanceDetails.MaintenanceItem.HCD_Segment.AWR_Segment;
-      return AWR_Segment.create(awrSegment);
-    });
+    // var createAwrSegments= _.map(awr, function(ScheduledMaintenanceDetails){
+    //   var awrSegment = ScheduledMaintenanceDetails.MaintenanceItem.HCD_Segment.AWR_Segment;
+    //   return AWR_Segment.create(awrSegment);
+    // });
 
-    var createSegments = _.concat(createHcdSegments, createAwrSegments);
+    var createSegments = _.concat(createHcdSegments);
     createSegments.push(HDR_Segment.create(check.ScheduledMaintenance.HDR_Segment));
     createSegments.push(AID_Segment.create(check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment));
     createSegments.push(WPI_Segment.create(check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.WPI_Segment));
@@ -132,22 +137,37 @@ angular.module('itechApp')
 
   function beforeDestroyScheduledMaintenance(Resource, scheduledMaintenance, cb) {
 
+    console.log(scheduledMaintenance.AIN);
     var WPI = scheduledMaintenance[Resource.idAttribute];
-    var del = _.concat(
+    var del = _.concat( Kardex.destroy(scheduledMaintenance.AIN),
                         _.map(scheduledMaintenance.HCD_Segments, function(hcd){
                          return HCD_Segment.destroy(hcd.HRI);
                        }),
                          _.map(scheduledMaintenance.AWR_Segments, function(awr){
                          return AWR_Segment.destroy(awr.HRI);
+                       }),
+                         _.map(scheduledMaintenance.NRF_Segments, function(nrf){
+                         return NRF_Segment.destroy(nrf.id);
                        }));
     del.push(HDR_Segment.destroy(WPI));
     del.push(AID_Segment.destroy(WPI));
     del.push(WPI_Segment.destroy(WPI));
+    del.push(AWR_Segment.destroy(WPI));
+
+    var where = {
+        where: {
+          'AIN': {
+            '==': scheduledMaintenance.AIN
+          }
+        }
+      };
+    del.push(PAR_Segment.destroyAll(where));
+    del.push(IPT_Segment.destroyAll(where));
     
 
     store.utils.Promise.all(del).then(function(){
       cb(null, scheduledMaintenance);
-    })
+    }, function(err){console.log(err);})
   };
 
   ScheduledMaintenance.overview = function(){
@@ -175,9 +195,11 @@ angular.module('itechApp')
 
 function overview() {
   return ScheduledMaintenance
-  .loadRelations(this, ['HCD_Segments', 'AWR_Segments'])
+  .loadRelations(this, ['AID_Segment', 'HCD_Segments', 'AWR_Segments'])
   .then(function(sm){
     return {
+      AMC : sm.AID_Segment.AMC,
+      AIN : sm.AID_Segment.AIN,
       WPI : sm.WPI,
       items : sm.itemNumber(),
       executedItems : sm.executedItem()
@@ -232,7 +254,9 @@ function toJson(){
       WorkPackageDetails: {
         WPI_Segment : this.WPI_Segment.toJson(),
         ScheduledMaintenanceDetails : _.concat(
-          _(this.HCD_Segments).filter('TED').map(function(hcd_segment){return {MaintenanceItem : {HCD_Segment :hcd_segment.toJson()}}; }).value(),
+          _(this.HCD_Segments).filter('TED').map(function(hcd_segment){
+            return hcd_segment.toJson(); 
+          }).value(),
           _(this.AWR_Segments).filter('TED').map(function(awr_segment){return {MaintenanceItem : {HCD_Segment :awr_segment.toJson()}}; }).value()
           )
       }

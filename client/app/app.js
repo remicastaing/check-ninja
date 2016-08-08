@@ -14,9 +14,13 @@ angular.module('itechApp', [
   'cb.x2js',
   'ui.grid', 'ui.grid.treeView', 'ui.grid.autoResize',
   'ui.bootstrap.datepicker',
+  'ui.bootstrap.modal',
   'js-data'
 ])
-  .config(function($urlRouterProvider, $locationProvider) {
+  .config(function($urlRouterProvider, $locationProvider,$qProvider) {
+    
+    $qProvider.errorOnUnhandledRejections(false);
+
     $urlRouterProvider
       .otherwise('/');
 

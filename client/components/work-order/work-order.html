@@ -1,18 +1,3 @@
-<div class="panel panel-info">
-
-<div class="panel-heading ">
-
-  <h1 class="panel-title">
-    <button type="button" class="close" aria-label="Close" ui-sref="check({WPI:editwo.wo.WPI})"><span aria-hidden="true">&times;</span></button>
-    Work Order <b>{{editwo.wo.HRI}}</b>
-  </h1>
-
-
-
-</div>
-<div class="panel-body">
-
-
   <div class="row">
 
 
@@ -44,11 +29,7 @@
       <div class="form-group ">
         <label class="col-sm-6 control-label">Task End Date </label>
         <div class="col-sm-6">
-          <div class="input-group ">
-            <input type="text" class="form-control" uib-datepicker-popup  ng-model="editwo.wo.TED" is-open="editwo.popup['TED'].opened" min-date="editwo.minDate" max-date="editwo.maxDate" datepicker-options="editwo.dateOptions" date-disabled="editwo.disabled(date, mode)" close-text="Close" />
-            <span class="input-group-addon">  <span class="glyphicon glyphicon-calendar" ng-click="editwo.open('TED')"></span>
-          </span>
-        </div>
+          <date-input date = "editwo.wo.TED"></date-input>
       </div>
     </div>
   </form>
@@ -80,19 +61,4 @@
   </div>
 </div>
 
-</div>
-
-<div class="panel-footer ">
-  <div class="pull-right bg-info">
-
-    <button type="button" class="btn   btn-info" ng-click="editwo.save()" >
-      <i class="fa fa-floppy-o fa-1x fa-fw" aria-hidden="true"></i> 
-    </button>
-
-  </div>
-  <div class="clearfix"></div>
-</div>
-
-
-</div>
 </div>

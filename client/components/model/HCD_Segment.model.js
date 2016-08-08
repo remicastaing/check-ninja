@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('itechApp')
-.factory('HCD_Segment', function (store, ATA2K, AWR_Segment, NRF_Segment) {
+.factory('HCD_Segment', function (store, ATA2K, AWR_Segment, NRF_Segment, PAR_Segment, IPT_Segment) {
 
  
 
@@ -49,20 +49,38 @@ angular.module('itechApp')
       methods: {
       	overview : hdcOverview,
       	toJson: function(){
-          console.log(this);
-          var json = ATA2K.toJson('HCD_Segment', this);
-          if (this.AWR_Segment>0) {
-            json.AWR_Segment = ATA2K.toJson('AWR_Segment', this.AWR_Segment);
+
+          var hcd_json = ATA2K.toJson('HCD_Segment', this);
+          if (typeof this.AWR_Segment === 'object' ) {
+            hcd_json.AWR_Segment = ATA2K.toJson('AWR_Segment', this.AWR_Segment);
           }
 
           if (this.NRF_Segments.length>0) {
-            json.NRF_Segment = _.map(this.NRF_Segments).map(function (nrf) {
+            hcd_json.NRF_Segment = _.map(this.NRF_Segments).map(function (nrf) {
               console.log(nrf);
               return nrf.toJson();
             });
-          }          
+          }
+
+          var res = {
+              MaintenanceItem : {
+                HCD_Segment : hcd_json
+              }
+            }
+
+          if (this.PAR_Segments.length>0) {
+              res.PAR_Segment = _(this.PAR_Segments).map(function(par_segment){
+                return par_segment.toJson(); 
+              }).value();
+          }
+
+          if (this.IPT_Segments.length>0) {
+              res.IPT_Segment = _(this.IPT_Segments).map(function(ipt_segment){
+                return ipt_segment.toJson(); 
+              }).value();
+          }        
           
-          return json;
+          return res;
         },
       },
       computed: {
@@ -72,7 +90,14 @@ angular.module('itechApp')
           enumerable: true,
           get: function () {
             return this.HRI.split('/')[1];
-          }
+          },
+        },
+        MIR: {
+          // default is false
+          enumerable: true,
+          get: function () {
+            return this.NRF_Segments.length;
+          },
         }
       },
       beforeUpdate : function (Resource, data, cb){
@@ -82,9 +107,24 @@ angular.module('itechApp')
           }
           data.TED = convertDate(data.TED);
           cb(null, data);
-        }
+        },
+      beforeDestroy: beforeDestroyHCDSegment
     }
     );
+
+
+  function beforeDestroyHCDSegment(Resource, hcd, cb) {
+
+    if (hcd.type == 4) {
+      AWR_Segment.destroy(hcd.HRI).then(function(){
+        cb(null, hcd);
+      });
+    }
+    else {
+      cb(null, hcd);
+    }
+  };
+
 }).run(function (HCD_Segment) {});
 
 
@@ -93,7 +133,7 @@ angular.module('itechApp')
 
     var HRI = this.HRI.split('/');
 
-    var res =  this.type != 4 ? {
+    var res =  HRI[1]!= 4 ? {
       'type' : HRI[1],
       'index' : HRI[2],
       'HRI' : this.HRI,

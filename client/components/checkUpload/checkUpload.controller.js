@@ -21,13 +21,13 @@
     	vm.ata =  ATA2K;
 
     	vm.loadCheck= function($fileContent){
-            check = x2js.xml_str2json($fileContent);
+            check = x2js.xml_str2json(utf8.decode($fileContent));
 
             vm.description = ScheduledMaintenance.description(check);
 
             var checkgrid = {};
 
-            checkgrid.data = _.map(check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.ScheduledMaintenanceDetails, function(MaintenanceItem){
+            checkgrid.data = _.map(check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.ScheduledMaintenanceDetails, function(MaintenanceItem){  
                 return HCD_Segment.methods.overview.apply(MaintenanceItem.MaintenanceItem.HCD_Segment);
             })
             
@@ -41,10 +41,13 @@
             kardex = x2js.xml_str2json($fileContent);
 
             vm.kardex = kardex;
+            var AIN = kardex.Kardex.AircraftInformation.AID_Segment.AIN;
 
+            console.log(kardex);
 
             if (_.isEqual(check.ScheduledMaintenance.HDR_Segment, kardex.Kardex.HDR_Segment) && _.isEqual(check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment, kardex.Kardex.AircraftInformation.AID_Segment)) {
-            	var partlist= Kardex.partList(kardex.Kardex.AircraftInformation.InstallDetails.InstalledPart);
+            	var partlist= Kardex.partList(kardex.Kardex.AircraftInformation.InstallDetails.InstalledPart,AIN);
+                console.log(partlist);
             	vm.gridOptions = {
     	        	data : partlist,
     	        	enableSorting: true,
@@ -65,6 +68,8 @@
             	console.log(DeepDiff.diff(check.ScheduledMaintenance.HDR_Segment, kardex.Kardex.HDR_Segment));
             	console.log(DeepDiff.diff(check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment, kardex.Kardex.AircraftInformation.AID_Segment));
             };
+
+
         
     	};
 
@@ -74,12 +79,14 @@
 		  };
 
         vm.save = function() {
+    
+            kardex.WPI = check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.WPI_Segment.WPI;
 
             ScheduledMaintenance.create(check)
+            .then(Kardex.create(kardex), function(err){console.log(err);})
             .then(function() {
               return $state.go('checks'); 
-            })
-            ;//.then(Kardex.create(kardex));
+            }, function(err){console.log(err);});
         };
 
 

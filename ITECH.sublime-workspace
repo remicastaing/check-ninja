@@ -4,8 +4,124 @@
 		"selected_items":
 		[
 			[
+				"par",
+				"par_json"
+			],
+			[
+				"PAR",
+				"PAR_Segment"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"IP",
+				"IPT_Segments"
+			],
+			[
+				"lo",
+				"lowerPart"
+			],
+			[
+				"c",
+				"ctrl"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"edi",
+				"editFinding"
+			],
+			[
+				"find",
+				"finding"
+			],
+			[
+				"in",
+				"install"
+			],
+			[
+				"insta",
+				"installation"
+			],
+			[
+				"on",
+				"onCreateInstallation"
+			],
+			[
+				"chan",
+				"changesObj"
+			],
+			[
+				"pos",
+				"posATN"
+			],
+			[
+				"sce",
+				"scheduledMaintenance"
+			],
+			[
+				"ps",
+				"ps0"
+			],
+			[
+				"mo",
+				"movements"
+			],
+			[
+				"kar",
+				"kardexs"
+			],
+			[
+				"ATA",
+				"ATA2K"
+			],
+			[
+				"A",
+				"AWR_Segment"
+			],
+			[
 				"hcd",
-				"hcd_segment"
+				"hcdSegment"
+			],
+			[
+				"a",
+				"awr"
+			],
+			[
+				"awr",
+				"awrSegment"
+			],
+			[
+				"dis",
+				"disabledCalendar"
+			],
+			[
+				"da",
+				"dated"
+			],
+			[
+				"di",
+				"div	Tag"
+			],
+			[
+				"row",
+				"rowTemplate"
+			],
+			[
+				"ro",
+				"rowTemplate"
+			],
+			[
+				"st",
+				"stateParams"
+			],
+			[
+				"gri",
+				"gridOptions"
 			],
 			[
 				"to",
@@ -104,10 +220,6 @@
 				"testUser"
 			],
 			[
-				"lo",
-				"loginPage"
-			],
-			[
 				"veri",
 				"verifiedUser"
 			],
@@ -168,20 +280,12 @@
 				"grayCanvas"
 			],
 			[
-				"c",
-				"conteneur"
-			],
-			[
 				"image",
 				"imageHelper"
 			],
 			[
 				"im",
 				"imageHelper"
-			],
-			[
-				"con",
-				"conteneur"
 			],
 			[
 				"ima",
@@ -195,91 +299,55 @@
 			"file": "client/components/model/ScheduleMaintenance.model.js",
 			"settings":
 			{
-				"buffer_size": 6851,
+				"buffer_size": 10466,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "client/components/check/check.controller.js",
+			"file": "client/components/movement/installation/installation.controller.js",
 			"settings":
 			{
-				"buffer_size": 2464,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/components/check-store/check-store.controller.js",
-			"settings":
-			{
-				"buffer_size": 2800,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/components/model/variousSegment.model.js",
-			"settings":
-			{
-				"buffer_size": 4197,
+				"buffer_size": 1897,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "client/components/check-helper/ataspec-helper.service.js",
+			"file": "client/components/model/IPT_Segment.model.js",
 			"settings":
 			{
-				"buffer_size": 10445,
+				"buffer_size": 1947,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "check.xml",
+			"file": "client/components/model/PAR_Segment.model.js",
 			"settings":
 			{
-				"buffer_size": 10260,
+				"buffer_size": 2542,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ScheduledMaintenance version=\"1\">\n    <HDR_Segment>\n        <CHG>T</CHG>\n        <ROC>ZZZZZ</ROC>\n        <RDT>2016-05-26</RDT>\n        <RSD>2016-05-26</RSD>\n        <OPR>ZZZZZ</OPR>\n        <RON>ZZZZZ</RON>\n        <WHO>BASE AERIENNE DE SALON DE PROVENCE</WHO>\n    </HDR_Segment>\n    <ScheduledMaintenanceEvents>\n        <AID_Segment>\n            <MFR>EXTRA</MFR>\n            <AMC>0490</AMC>\n            <AIN>000004</AIN>\n            <REG>F-TGCI</REG>\n        </AID_Segment>\n        <WorkPackageDetails>\n            <WPI_Segment>\n                <WPI>BSEA00000058</WPI>\n                <WOD>2016-03-18</WOD>\n                <MCI>V0050H</MCI>\n                <MCV>50 FH</MCV>\n                <CTH>1607.67</CTH>\n                <CTY>2353</CTY>\n            </WPI_Segment>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/2/1</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <OII>M0025H</OII>\n                        <OTD>Carte Visite Moteur 25 heures</OTD>\n                        <OMN>25 FH</OMN>\n                        <ATA>00</ATA>\n                        <CTH>1607.67</CTH>\n                        <CTY>2353</CTY>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/2/2</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <OII>M0050H</OII>\n                        <OTD>Carte Visite Moteur 50 heures</OTD>\n                        <OMN>50 FH</OMN>\n                        <ATA>00</ATA>\n                        <CTH>1607.67</CTH>\n                        <CTY>2353</CTY>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/2/3</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <OII>V0025H</OII>\n                        <OTD>Carte Visite Aircraft 25 heures</OTD>\n                        <OMN>25 FH</OMN>\n                        <ATA>00</ATA>\n                        <CTH>1607.67</CTH>\n                        <CTY>2353</CTY>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/2/4</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <OII>V0050H</OII>\n                        <OTD>Carte Visite Aircraft 50 heures</OTD>\n                        <OMN>50 FH</OMN>\n                        <ATA>00</ATA>\n                        <CTH>1607.67</CTH>\n                        <CTY>2353</CTY>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/5</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <AWR_Segment>\n                            <MNT> </MNT>\n                            <TWI>BSEA00000502</TWI>\n                            <HRI>BSEA00000058/4/5</HRI>\n                            <ATA>74</ATA>\n                            <FDT>Référence à exécuter\nDTC 643 B 1\nIntervalles de maintenance des Magnetos d'avions TCM et Bendix ainsi que des équipements connexes.</FDT>\n                        </AWR_Segment>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/6</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <AWR_Segment>\n                            <MNT> </MNT>\n                            <TWI>BSEA00000503</TWI>\n                            <HRI>BSEA00000058/4/6</HRI>\n                            <ATA>27</ATA>\n                            <FDT>Référence à exécuter\nDTP 0489/0490-14/DTP/02 00 00\nDTP 02/SIMMAD/F04/EXTRA/2014 Inspection du \"torque tube\"</FDT>\n                        </AWR_Segment>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/7</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <AWR_Segment>\n                            <MNT> </MNT>\n                            <TWI>BSEA00000504</TWI>\n                            <HRI>BSEA00000058/4/7</HRI>\n                            <ATA>00</ATA>\n                            <FDT>Référence à exécuter\nDTP 0489/0490-14/DTP/01 00 00\nDTP 01/SIMMAD/F04/EXTRA/2014 Vérification du bâti moteur toutes les 25 heures</FDT>\n                        </AWR_Segment>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/8</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <AWR_Segment>\n                            <MNT> </MNT>\n                            <TWI>BSEA00000505</TWI>\n                            <HRI>BSEA00000058/4/8</HRI>\n                            <ATA>72</ATA>\n                            <FDT>Référence à exécuter\nDTC 480 E 1\nNettoyage filtre à huile et échange huile moteur.</FDT>\n                        </AWR_Segment>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/10</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <ZON_Segment>\n                            <MAZ>100</MAZ>\n                        </ZON_Segment>\n                        <AWR_Segment>\n                            <MNT> </MNT>\n                            <TWI>BSEA00000506</TWI>\n                            <HRI>BSEA00000058/4/10</HRI>\n                            <ATA>28</ATA>\n                            <FDT>OE GENERE DEPUIS ECHEANCIER CARTE\nGASCOLATOR (Carte Gascolator)\n AVEC OPERATION(S)\n - GASCOLATOR (Carte Gascolator)</FDT>\n                        </AWR_Segment>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n        </WorkPackageDetails>\n    </ScheduledMaintenanceEvents>\n</ScheduledMaintenance>",
-			"file": "/Users/remi/Google Drive/ITECH/BSEA00000058.xml",
-			"file_size": 7627,
-			"file_write_time": 131089459760000000,
+			"file": "client/components/movement/new-movement/new-movement.controller.js",
 			"settings":
 			{
-				"buffer_size": 7423,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ScheduledMaintenance xmlns:scm=\"http://airbus.corp/ISDS/MIS/ScheduledMaintenance\" version=\"3.03\">\n    <HDR_Segment>\n        <CHG>T</CHG>\n        <ROC>ZZZZZ</ROC>\n        <RDT>2016-05-26</RDT>\n        <RSD>2016-05-26</RSD>\n        <OPR>ZZZZZ</OPR>\n        <RON>ZZZZZ</RON>\n        <WHO>BASE AERIENNE DE SALON DE PROVENCE</WHO>\n    </HDR_Segment>\n    <ScheduledMaintenanceEvents>\n        <AID_Segment>\n            <MFR>EXTRA</MFR>\n            <AMC>0490</AMC>\n            <AIN>000004</AIN>\n            <REG>F-TGCI</REG>\n        </AID_Segment>\n        <WorkPackageDetails>\n            <WPI_Segment>\n                <WPI>BSEA00000058</WPI>\n                <WOD>2016-03-18</WOD>\n                <MCI>V0050H</MCI>\n                <MCV>50 FH</MCV>\n                <CTH>1607.67</CTH>\n                <CTY>2353</CTY>\n            </WPI_Segment>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/2/1</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <OII>M0025H</OII>\n                        <OTD>Carte Visite Moteur 25 heures</OTD>\n                        <OMN>25 FH</OMN>\n                        <ATA>00</ATA>\n                        <CTH>1607.67</CTH>\n                        <CTY>2353</CTY>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/2/2</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <OII>M0050H</OII>\n                        <OTD>Carte Visite Moteur 50 heures</OTD>\n                        <OMN>50 FH</OMN>\n                        <ATA>00</ATA>\n                        <CTH>1607.67</CTH>\n                        <CTY>2353</CTY>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/2/3</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <OII>V0025H</OII>\n                        <OTD>Carte Visite Aircraft 25 heures</OTD>\n                        <OMN>25 FH</OMN>\n                        <ATA>00</ATA>\n                        <CTH>1607.67</CTH>\n                        <CTY>2353</CTY>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/2/4</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <OII>V0050H</OII>\n                        <OTD>Carte Visite Aircraft 50 heures</OTD>\n                        <OMN>50 FH</OMN>\n                        <ATA>00</ATA>\n                        <CTH>1607.67</CTH>\n                        <CTY>2353</CTY>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/5</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/6</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/7</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/8</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/10</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n        </WorkPackageDetails>\n    </ScheduledMaintenanceEvents>\n    <ScheduledMaintenance>",
-			"file": "/Users/remi/Downloads/retour_BSEA00000058 (6).xml",
-			"file_size": 5270,
-			"file_write_time": 131089471410000000,
-			"settings":
-			{
-				"buffer_size": 5266,
+				"buffer_size": 2275,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ScheduledMaintenance xmlns:scm=\"http://airbus.corp/ISDS/MIS/ScheduledMaintenance\" version=\"3.03\">\n    <HDR_Segment>\n        <CHG>T</CHG>\n        <ROC>ZZZZZ</ROC>\n        <RDT>2016-05-26</RDT>\n        <RSD>2016-05-26</RSD>\n        <OPR>ZZZZZ</OPR>\n        <RON>ZZZZZ</RON>\n        <WHO>BASE AERIENNE DE SALON DE PROVENCE</WHO>\n    </HDR_Segment>\n    <ScheduledMaintenanceEvents>\n        <AID_Segment>\n            <MFR>EXTRA</MFR>\n            <AMC>0490</AMC>\n            <AIN>000004</AIN>\n            <REG>F-TGCI</REG>\n        </AID_Segment>\n        <WorkPackageDetails>\n            <WPI_Segment>\n                <WPI>BSEA00000058</WPI>\n                <WOD>2016-03-18</WOD>\n                <MCI>V0050H</MCI>\n                <MCV>50 FH</MCV>\n                <CTH>1607.67</CTH>\n                <CTY>2353</CTY>\n            </WPI_Segment>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/2/1</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <OII>M0025H</OII>\n                        <OTD>Carte Visite Moteur 25 heures</OTD>\n                        <ATA>00</ATA>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/2/2</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <OII>M0050H</OII>\n                        <OTD>Carte Visite Moteur 50 heures</OTD>\n                        <ATA>00</ATA>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/2/3</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <OII>V0025H</OII>\n                        <OTD>Carte Visite Aircraft 25 heures</OTD>\n                        <ATA>00</ATA>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/2/4</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                        <OII>V0050H</OII>\n                        <OTD>Carte Visite Aircraft 50 heures</OTD>\n                        <ATA>00</ATA>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/5</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/6</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/7</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/8</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n            <ScheduledMaintenanceDetails>\n                <MaintenanceItem>\n                    <HCD_Segment>\n                        <HRI>BSEA00000058/4/10</HRI>\n                        <OST>true</OST>\n                        <MIR>false</MIR>\n                    </HCD_Segment>\n                </MaintenanceItem>\n            </ScheduledMaintenanceDetails>\n        </WorkPackageDetails>\n    </ScheduledMaintenanceEvents>\n    <ScheduledMaintenance>",
-			"file": "/Users/remi/Downloads/retour_BSEA00000058 (3).xml",
-			"file_size": 4774,
-			"file_write_time": 131089468170000000,
+			"file": "client/components/movement/movement/movement.controller.js",
 			"settings":
 			{
-				"buffer_size": 4770,
+				"buffer_size": 3100,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ScheduledMaintenance xmlns:scm=\"http://airbus.corp/ISDS/MIS/ScheduledMaintenance\" version=\"3.03\">\n    <HDR_Segment>\n        <CHG>T</CHG>\n        <ROC>ZZZZZ</ROC>\n        <RDT>2016-05-26</RDT>\n        <RSD>2016-05-26</RSD>\n        <OPR>ZZZZZ</OPR>\n        <RON>ZZZZZ</RON>\n        <WHO>BASE AERIENNE DE SALON DE PROVENCE</WHO>\n    </HDR_Segment>\n    <ScheduledMaintenanceEvents>\n        <AID_Segment>\n            <MFR>EXTRA</MFR>\n            <AMC>0490</AMC>\n            <AIN>000004</AIN>\n            <REG>F-TGCI</REG>\n        </AID_Segment>\n        <WorkPackageDetails>\n            <WPI_Segment>\n                <WPI>BSEA00000058</WPI>\n                <WOD>2016-03-18</WOD>\n                <MCI>V0050H</MCI>\n                <MCV>50 FH</MCV>\n                <CTH>1607.67</CTH>\n                <CTY>2353</CTY>\n            </WPI_Segment>\n        </WorkPackageDetails>\n    </ScheduledMaintenanceEvents>\n    <ScheduledMaintenance>",
-			"file": "/Users/remi/Downloads/retour_BSEA00000058.xml",
-			"file_size": 985,
-			"file_write_time": 131089464210000000,
+			"file": "client/components/model/Reference.model.js",
 			"settings":
 			{
-				"buffer_size": 981,
+				"buffer_size": 1586,
 				"line_ending": "Unix"
 			}
 		}
@@ -337,148 +405,152 @@
 		"/Users/remi/Workspaces/ITECH/client",
 		"/Users/remi/Workspaces/ITECH/client/app",
 		"/Users/remi/Workspaces/ITECH/client/app/item",
-		"/Users/remi/Workspaces/ITECH/client/app/upload",
 		"/Users/remi/Workspaces/ITECH/client/assets",
 		"/Users/remi/Workspaces/ITECH/client/assets/xsd",
 		"/Users/remi/Workspaces/ITECH/client/components",
 		"/Users/remi/Workspaces/ITECH/client/components/check",
 		"/Users/remi/Workspaces/ITECH/client/components/check-helper",
-		"/Users/remi/Workspaces/ITECH/client/components/check-store",
-		"/Users/remi/Workspaces/ITECH/client/components/checkUpload",
-		"/Users/remi/Workspaces/ITECH/client/components/item",
-		"/Users/remi/Workspaces/ITECH/client/components/kardex-helper",
-		"/Users/remi/Workspaces/ITECH/client/components/model"
+		"/Users/remi/Workspaces/ITECH/client/components/fields/save-delete-cancel",
+		"/Users/remi/Workspaces/ITECH/client/components/model",
+		"/Users/remi/Workspaces/ITECH/client/components/movement",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/aging",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/installation",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/movement",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/new-movement",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/removal",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/select-position",
+		"/Users/remi/Workspaces/ITECH/client/components/work-order"
 	],
 	"file_history":
 	[
-		"/Users/remi/Downloads/retour_AXAA00000433 (1).xml",
-		"/Users/remi/Workspaces/ITECH/check.json",
-		"/Users/remi/Workspaces/ITECH/client/components/model/variousSegment.model.js",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/select-position/select-position.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/model/HCD_Segment.model.js",
+		"/Users/remi/Workspaces/ITECH/client/components/model/PAR_Segment.model.js",
+		"/Users/remi/Workspaces/ITECH/client/components/model/IPT_Segment.model.js",
 		"/Users/remi/Workspaces/ITECH/client/components/check/check.controller.js",
-		"/Users/remi/Workspaces/ITECH/client/components/checkUpload/checkUpload.html",
-		"/Users/remi/Workspaces/ITECH/client/components/check-store/buttons.html",
-		"/Users/remi/Workspaces/ITECH/client/components/check-store/check-store.controller.js",
-		"/Users/remi/Workspaces/ITECH/client/components/check-store/export-modal.html",
-		"/Users/remi/Workspaces/ITECH/client/components/checkUpload/checkUpload.controller.js",
-		"/Users/remi/Workspaces/ITECH/client/components/check-helper/checkhelper.service.js",
-		"/Users/remi/Workspaces/ITECH/client/app/upload/upload.controller.js",
-		"/Users/remi/Workspaces/ITECH/client/components/check-helper/ataspec-helper.service.js",
-		"/Users/remi/Workspaces/ITECH/client/app/app.js",
-		"/Users/remi/Workspaces/ITECH/client/components/model/ScheduleMaintenance.model.js",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/installation/installation.html",
+		"/Users/remi/Workspaces/ITECH/client/components/model/Reference.model.js",
+		"/Users/remi/Workspaces/ITECH/client/components/model/InstalledPart.model.js",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/new-movement/new-movement.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/fields/save-delete-cancel/save-delete-cancel.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/installation/installation.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/aging/aging.html",
+		"/Users/remi/Workspaces/ITECH/client/components/model/Kardex.model.js",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/movement/movement.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/removal/removal.html",
+		"/Users/remi/Workspaces/ITECH/client/components/work-order/work-order.html",
 		"/Users/remi/Workspaces/ITECH/client/app/item/item.html",
+		"/Users/remi/Workspaces/ITECH/client/components/card/card.html",
+		"/Users/remi/Workspaces/ITECH/client/components/check/check.html",
 		"/Users/remi/Workspaces/ITECH/client/app/item/item.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/findings/finding-list/finding-list.controller.js",
 		"/Users/remi/Workspaces/ITECH/client/app/item/item.js",
-		"/Users/remi/Workspaces/ITECH/client/components/item/item.directive.js",
-		"/Users/remi/Workspaces/ITECH/client/components/item/item.controller.js",
-		"/Users/remi/Workspaces/ITECH/client/components/check-store/check-store.service.js",
-		"/Users/remi/Workspaces/ITECH/client/components/check-model/check.model.js",
-		"/Users/remi/Workspaces/ITECH/client/components/kardex-helper/kardexhelper.service.js",
-		"/Users/remi/Workspaces/ITECH/client/components/checkUpload/checkgrid.scss",
-		"/Users/remi/Workspaces/ITECH/check.xml",
-		"/Users/remi/Workspaces/ITECH/client/app/store/store.controller.js",
-		"/Users/remi/Workspaces/ITECH/kardex.xml",
+		"/Users/remi/Workspaces/ITECH/client/components/card/card.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/fields/save-delete-cancel/save-delete-cancel.html",
+		"/Users/remi/Workspaces/ITECH/client/app/check/check.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/model/ScheduleMaintenance.model.js",
+		"/Users/remi/Workspaces/ITECH/client/components/check-store/check-store.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/app/check/check.js",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/new-movement/new-movement.modal.html",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/select-position/select-position.html",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/movement/movement.html",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/removal-installation-button/removal-button.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/removal-installation-button/installation-button.html",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/removal/removal.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/removal-button/removal-button.html",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/removal-button/removal-button.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/installation-button/installation-button.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/select-position/select-position.scss",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/removal-button/removal-button.scss",
+		"/Users/remi/Workspaces/ITECH/client/components/findings/finding/finding.html",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/new-movement/new-movement.html",
+		"/Users/remi/Workspaces/ITECH/client/app/app.js",
+		"/Users/remi/Workspaces/ITECH/client/components/movement/aging/aging.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/movement/movement.html",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/movement/movement.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/findings/finding/finding.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/model/NRF_Segment.model.js",
+		"/Users/remi/Workspaces/ITECH/client/components/findings/finding-list/finding-list.html",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/select-position/select-position.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/finding-list/finding-list.html",
+		"/Users/remi/Workspaces/ITECH/client/components/findings/new-finding/new-finding.html",
+		"/Users/remi/Workspaces/ITECH/client/components/findings/new-finding/new-finding.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/findings/finding/finding.directive.js",
+		"/Users/remi/Workspaces/ITECH/client/components/finding-list/finding-list.directive.js",
+		"/Users/remi/Workspaces/ITECH/client/components/finding-list/finding-list.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/app/transaction/transaction.html",
+		"/Users/remi/Workspaces/ITECH/client/app/transaction/transaction.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/installation/installation.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/installation/installation.html",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/removal/removal.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/removal/removal.html",
+		"/Users/remi/Workspaces/ITECH/client/components/checkUpload/checkUpload.controller.js",
 		"/Users/remi/Workspaces/ITECH/bower.json",
-		"/Users/remi/Workspaces/ITECH/client/app/upload/upload.html",
-		"/Users/remi/Workspaces/ITECH/client/index.html",
-		"/Users/remi/Workspaces/ITECH/client/assets/xsd/check.xsd",
-		"/Users/remi/Workspaces/ITECH/client/components/checkUpload/checkUpload.scss",
-		"/Users/remi/Workspaces/ITECH/client/components/checkdef/checkdef.service.js",
-		"/Users/remi/Workspaces/ITECH/client/components/onReadFile/onReadFile.directive.js",
-		"/Users/remi/Workspaces/ITECH/client/components/checkhelper/checkhelper.service.js",
-		"/Users/remi/Workspaces/ITECH/client/components/checkUpload/checkUpload.directive.js",
-		"/Users/remi/Workspaces/ITECH/client/components/checkhelper/checkhelper.service.spec.js",
-		"/Users/remi/Workspaces/ITECH/client/app/main/main.html",
-		"/Users/remi/Google Drive/ITECH/AXAA00000432.xml",
-		"/Users/remi/Workspaces/ITECH/client/app/upload/upload.js",
-		"/Users/remi/Workspaces/ITECH/client/components/upload/upload.controller.js",
-		"/Users/remi/Workspaces/ITECH/client/components/upload/upload.html",
-		"/Users/remi/Workspaces/ITECH/client/components/navbar/navbar.html",
+		"/Users/remi/Workspaces/ITECH/client/components/model/store.service.js",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/aging/aging.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/fields/input-field/input-field.html",
+		"/Users/remi/Workspaces/ITECH/client/components/referencesUpload/referencesUpload.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/model/reference.model.js",
+		"/Users/remi/Workspaces/ITECH/client/components/referencesUpload/referencesUpload.html",
+		"/Users/remi/Workspaces/ITECH/client/components/fields/field/field.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/fields/field/field.html",
+		"/Users/remi/Workspaces/ITECH/client/components/fields/input-field/input-field.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/select-position/select-position.scss",
+		"/Users/remi/Workspaces/ITECH/client/app/references/references.html",
 		"/Users/remi/Workspaces/ITECH/client/components/navbar/navbar.controller.js",
-		"/Users/remi/Workspaces/ITECH/client/app/app.scss",
-		"/Users/remi/Workspaces/serverless/auth/node_modules/cognito-helper/test/cognito-helper.js",
-		"/Users/remi/Workspaces/serverless/auth/node_modules/cognito-helper/client/scripts/config.js",
-		"/Users/remi/Workspaces/serverless/auth/node_modules/cognito-helper/.env",
-		"/Users/remi/Workspaces/serverless/auth/node_modules/cognito-helper/cognito-lambda.zip",
-		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/lib/models/thing.old.js",
-		"/Users/remi/Workspaces/serverless/test/dynotest/back/modules/serverless-examples/lib/index.js",
-		"/Users/remi/Workspaces/serverless/test/dynotest/back/modules/serverless-examples/rest/handler.js",
-		"/Users/remi/Workspaces/serverless/test/dynotest/back/modules/serverless-examples/rest/s-function.json",
-		"/Users/remi/Workspaces/serverless/test/dynotest/back/modules/serverless-examples/s-module.json",
-		"/Users/remi/Workspaces/serverless/test/dynotest/back/modules/dynamodb-examples/rest/s-function.json",
-		"/Users/remi/Workspaces/serverless/test/dynotest/back/modules/dynamodb-examples/s-module.json",
-		"/Users/remi/Workspaces/serverless/test/dynotest/back/modules/dynamodb-examples/functions/s-function.json",
-		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/lib/index.js",
-		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/testget1/handler.js",
-		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/README.md",
-		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/testget1/s-function.json",
-		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/testget2/s-function.json",
-		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/testget3/s-function.json",
-		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/testpost1/s-function.json",
-		"/Users/remi/Workspaces/serverless/serverless-examples-project/back/modules/serverless-examples/testpost2/s-function.json",
-		"/Users/remi/Workspaces/serverless/serverless-examples/back/modules/serverless-examples-module/README.md",
-		"/Users/remi/Workspaces/serverless/serverless-examples/back/modules/serverless-examples-module/package.json",
-		"/Users/remi/Workspaces/serverless/serverless-examples/back/modules/serverless-examples/package.json",
-		"/Users/remi/Workspaces/serverless/serverless-examples/.gitignore",
-		"/Users/remi/Workspaces/serverless/serverless-examples/package.json",
-		"/Users/remi/Workspaces/serverless/serverless-examples/s-module.json",
-		"/Users/remi/Workspaces/serverless/serverless-examples/README.md",
-		"/Users/remi/Workspaces/JAWS/jaws-examples/awsm-examples/awsm.json",
-		"/Users/remi/Workspaces/JAWS/jaws-examples/awsm-examples/package.json",
-		"/Users/remi/Workspaces/JAWS/jaws-examples/awsm-examples/awsm/testget1/awsm.json",
-		"/Users/remi/Workspaces/JAWS/jaws-examples/awsm-examples/awsm/testget2/awsm.json",
-		"/Users/remi/Workspaces/JAWS/jaws-examples/awsm-examples/awsm/testget3/awsm.json",
-		"/Users/remi/Workspaces/JAWS/jaws-examples/awsm-examples/awsm/testpost/awsm.json",
-		"/Users/remi/Workspaces/JAWS/jaws-examples/awsm-examples/README.md",
-		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/example/testget3/index.js",
-		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/example/testget1/awsm.json",
-		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/example/testget2/awsm.json",
-		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/example/testpost/awsm.json",
-		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/gethello2/index.js",
-		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/gethello1/awsm.json",
-		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/gethello/index.js",
-		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/gethello/awsm.json",
-		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/gethello2/awsm.json",
-		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/posthello/index.js",
-		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/hello/index.js",
-		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/posthello/awsm.json",
-		"/Users/remi/Workspaces/JAWS/JAWS-test/jaws-Vy8aKvDGl/aws_modules/greeting/hello/awsm.json",
-		"/Users/remi/Workspaces/JAWS/jaws-exemple/awsm-exemple/awsm.json",
-		"/Users/remi/Workspaces/JAWS/JAWS/lib/serve/gulpServe.babel.js",
-		"/Users/remi/Workspaces/JAWS/JAWS/lib/commands/gulpfile.babel.js",
-		"/Users/remi/Workspaces/JAWS/JAWS/lib/utils/gulpFile.js",
-		"/Users/remi/Workspaces/JAWS/JAWS/lib/commands/serve-front.js",
-		"/Users/remi/Workspaces/JAWS/JAWS/lib/index.js",
-		"/Users/remi/Workspaces/JAWS/JAWS_old/lib/config/config.js",
-		"/private/etc/ntp.conf",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/index.html",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/footer/footer.directive.spec.js",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/bower.json",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/navbar/navbar.html",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/navbar/navbar.scss",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/footer/appFooter.scss",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/footer/appFooter.html",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/ldcFooter/ldcFooter.directive.js",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/ldcFooter/ldcFooter.directive.spec.js",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/footer/appFooter.directive.js",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/cookie-disclaimer/cookie-disclaimer.controller.js",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/bower_components/angulartics/bower.json",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/sidenav/sidenav.controller.js",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/app/account/account.js",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/navbar/navbar.directive.js",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/sidenav/sidenav.directive.js",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/skeleton/skeleton.directive.js",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/skeleton/skeleton.html",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/app/app.js",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/signup/signup.html",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/sidenav/sidenav.html",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/app/app.scss",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/appheader/appheader.directive.js",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/hotjar_google.html",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/app/main/main.scss",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/navbar/navbar_old.html",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/appheader/appheader.html",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/drawer/drawer.html",
-		"/Users/remi/Workspaces/LUDIIC/ludiic/client/components/footer/footer.html"
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/installation-button/installation-button.html",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/installation-button/installation-button.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/fields/date-input/date-input.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/removal-button/removal-button.html",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/removal-button/removal-button.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/checkUpload/checkUpload.html",
+		"/Users/remi/Workspaces/ITECH/client/components/referencesUpload/referencesUpload.controller.spec.js",
+		"/Users/remi/Workspaces/ITECH/client/app/store/store.html",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/removal-button/removal-button.controller.spec.js",
+		"/Users/remi/Workspaces/ITECH/client/components/work-order/work-order.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/champs/champ/champ.directive.js",
+		"/Users/remi/Workspaces/ITECH/client/components/champs/champ/champ.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/champs/champ/champ.controller.spec.js",
+		"/Users/remi/Workspaces/ITECH/client/components/champs/champ/champ.html",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/aging/aging.html",
+		"/Users/remi/Workspaces/ITECH/client/components/champs/date-input/date-input.html",
+		"/Users/remi/Workspaces/ITECH/client/components/champs/date-input/date-input.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/check-helper/ATA2K.service.js",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/installation/installation.controller.spec.js",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/aging/aging.controller.spec.js",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/select-position/select-position.html",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/movement/movement.controller.spec.js",
+		"/Users/remi/Workspaces/ITECH/client/app/transaction/transaction.js",
+		"/Users/remi/Workspaces/ITECH/client/components/finding/finding.html",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/remove-install-list/remove-install-list.directive.js",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/removal/installation.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/transaction/removal/installation.controller.spec.js",
+		"/Users/remi/Workspaces/ITECH/client/components/select-position/select-position.html",
+		"/Users/remi/Workspaces/ITECH/client/components/select-position/select-position.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/select-position/select-position.controller.spec.js",
+		"/Users/remi/Workspaces/ITECH/client/app/selectposition/selectposition.js",
+		"/Users/remi/Workspaces/ITECH/client/app/selectposition/selectposition.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/onReadFile/onReadFile.directive.js",
+		"/Users/remi/Workspaces/ITECH/client/components/finding/finding.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/app/check/check.html",
+		"/Users/remi/Workspaces/ITECH/client/components/remove-install-list/remove-install-list.directive.spec.js",
+		"/Users/remi/Workspaces/ITECH/client/app/selectposition/selectposition.html",
+		"/Users/remi/Workspaces/ITECH/client/components/remove-install-list/remove-install-list.directive.js",
+		"/Users/remi/Workspaces/ITECH/client/components/remove-install-list/remove-install-list.controller.spec.js",
+		"/Users/remi/Workspaces/ITECH/client/components/remove-install-list/remove-install-list.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/remove-install/remove-install.html",
+		"/Users/remi/Google Drive/ITECH/Retour de visite - Exemple de fichier XML documenté.xml",
+		"/Users/remi/Workspaces/ITECH/check.json",
+		"/Users/remi/Workspaces/ITECH/client/components/model/AWR_Segment.model.js",
+		"/Users/remi/Workspaces/ITECH/client/components/finding/finding.directive.js",
+		"/Users/remi/Workspaces/ITECH/dist/client/package.json",
+		"/Users/remi/Workspaces/ITECH/dist/client/main.js",
+		"/Users/remi/Workspaces/ITECH/client/components/card/card.directive.js",
+		"/Users/remi/Workspaces/ITECH/client/components/model/variousSegment.model.js",
+		"/Users/remi/Workspaces/ITECH/client/components/check/modal.controller.js",
+		"/Users/remi/Workspaces/ITECH/client/components/work-order/work-order.directive.js",
+		"/Users/remi/Workspaces/ITECH/client/components/item/item.directive.js",
+		"/Users/remi/Workspaces/ITECH/client/components/item/item.controller.spec.js"
 	],
 	"find":
 	{
@@ -489,6 +561,10 @@
 		"height": 119.0,
 		"where_history":
 		[
+			"/Users/remi/Workspaces/ITECH/client/",
+			"/Users/remi/Workspaces/ITECH/client/components",
+			"/Users/remi/Workspaces/ITECH/client/app/components",
+			"/Users/remi/Workspaces/ITECH,/Users/remi/Workspaces/ITECH",
 			"/Users/remi/Workspaces/ITECH",
 			"",
 			"/Users/remi/Workspaces/serverless/auth/node_modules/cognito-helper/client/",
@@ -501,134 +577,134 @@
 		"case_sensitive": true,
 		"find_history":
 		[
-			"store",
-			"checkhelper",
-			"delete",
-			"checkhelper",
-			"MaintenanceItem",
-			"CompleteMaintenanceItem",
-			"HCD_Segment",
-			"ATN_Segment",
-			"checkStoreService",
-			"hri",
+			"ATT_Segment",
+			"par_segment",
+			"PAR_Segment",
+			"json",
+			"toJson",
+			"placeholder=\"Email\"",
+			"initInstallation",
+			"init",
+			"h4",
+			"h3",
+			"AIN",
+			"where",
+			"WPI",
+			"<hr>",
+			"<br>",
+			"<hr>",
+			"check",
+			"WPI",
+			"ctrl.items",
+			"WPI",
+			"item",
+			"date",
+			"<br>",
+			"$ctrl",
+			"delete ctrl.data;",
+			"row.entity.",
+			"</uib-tab-heading>",
+			"$ctrl.data",
+			"data",
+			"`",
+			"	<div class=\"panel panel-info\">\n		<div class=\"panel-body\">",
+			"AID",
+			"AIM",
+			"AMC",
+			"editcheck",
 			"vm",
-			"ty",
-			"checkStoreService",
-			"check",
-			"TED",
-			",",
-			"'text'",
-			"text",
-			"Text",
-			"text",
-			"length",
-			"II",
-			"MaintenanceItem",
-			"ScheduledMaintenance",
-			"check.",
-			",",
-			"tooltip",
-			"',",
-			"subParts",
-			"{\"MaintenanceItem\"",
-			"MaintenanceItem",
-			"ScheduledMaintenanceDetails",
-			"WorkPackageDetails",
-			"{",
-			"Sélect",
-			".js",
-			"tue",
-			"Karde",
-			"Profile",
-			"profile",
-			"Home",
-			"home",
-			"false",
-			"{}",
-			"checkdesc",
-			"checkdef",
-			"''",
-			"false",
-			"def",
-			"false",
-			"''",
-			"-4",
-			"-3",
-			"sm-4",
-			"sm-2",
-			".check",
-			"check",
-			"checkUpload",
-			"CheckUploadCtrl",
-			"Navbar",
-			"navbar",
-			"token",
-			"@",
-			"AWS",
-			"aws-sdk",
-			"functions",
-			"dyna",
-			"var3",
-			"var",
-			"team",
-			"teamId",
-			"Team",
-			"serverless-slack-teams",
-			"jaws",
-			"testget1",
-			"jacob@remicastaing.net",
-			"awsm-users",
-			"dekz",
-			"awsAdminSecretKey",
-			"profiles",
-			".tmp",
-			"yeoman",
-			"Path",
-			"path",
-			"ls",
-			"app.js",
-			"yeoman",
-			"awsAdminKeyId",
-			"setAwsAdminCreds",
-			"log-timestamp",
-			"mytimestamp();",
-			"mytimestamp",
-			"console.log(",
-			"<a",
-			"class=\"grey-text text-lighten-4\"",
-			"<p>",
-			"app",
-			"appFooter",
-			"app",
-			"footer",
-			"waypoints",
-			"name",
-			"footer",
-			"Navbar",
-			"navbar",
-			"Navbar",
-			"navbar",
-			"Drawer",
-			"drawer",
-			"Navbar",
-			"googl",
-			"0-rc.1",
-			"material",
-			"jQuery v1.10.1 ",
-			"footerPush",
-			"fontactive",
-			"WebFontConfig",
-			"footerPush",
-			"footer",
-			"mtlFooter",
-			"myfooter",
-			"footer",
-			"icon",
-			"./fonts/",
-			"icon-menu",
-			"menu-toggle",
-			"icon-lg",
-			"icon-close"
+			"$scope",
+			"editcheck",
+			"item.",
+			"WPI",
+			"10",
+			"30",
+			"WPI",
+			"overview",
+			"AMC",
+			"position",
+			"ref0",
+			"MFR",
+			"selected",
+			"initInstallation",
+			"removal",
+			"part",
+			"\\",
+			"row.entity",
+			"'+",
+			".length==0",
+			".length==1",
+			"split",
+			"splet",
+			"parts",
+			"$ctrl",
+			"removal",
+			"model",
+			"date-input",
+			"DateInput",
+			"ain",
+			"AIN",
+			"$scope",
+			"this.index",
+			"this.type",
+			"this.WPI",
+			"i",
+			"r",
+			"WPI",
+			"PAR",
+			"'",
+			"item.",
+			"finding",
+			"Finding",
+			"installations",
+			"removals",
+			"vm",
+			".NRF_Segments",
+			"findings",
+			"$ctrl",
+			"vm",
+			"card.NRF_Segments",
+			"card",
+			"finding",
+			"ctrl",
+			"card",
+			"$scope.data",
+			"vm",
+			"editfinding",
+			"date",
+			"finding-list",
+			"FindingList",
+			"vm",
+			"findinglist",
+			"$modal",
+			"MNP",
+			"remove",
+			"removal",
+			"MPN",
+			"installation",
+			"InstalledPart",
+			"this",
+			"ps[0]",
+			"mainRef",
+			"vm",
+			"data",
+			"removal",
+			"HRI",
+			"removal",
+			"CPI",
+			"vm",
+			"install",
+			"remove",
+			"vm",
+			"create",
+			"Create",
+			"createInstallation",
+			"createRemoval",
+			"CPI",
+			"cpi",
+			"editInstallation",
+			"editRemoval",
+			"partDetails.ATT_Segment"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -636,6 +712,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"ATA2K"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -646,7 +723,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -655,15 +732,165 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6851,
+						"buffer_size": 10466,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5549,
-								5549
+								8885,
+								9009
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4547.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "client/components/movement/installation/installation.controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1897,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								529,
+								529
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "client/components/model/IPT_Segment.model.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1947,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1576,
+								1576
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 167.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "client/components/model/PAR_Segment.model.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2542,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2167,
+								2167
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 547.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "client/components/movement/new-movement/new-movement.controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2275,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1045,
+								1045
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 463.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "client/components/movement/movement/movement.controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3100,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								502,
+								502
 							]
 						],
 						"settings":
@@ -676,24 +903,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "client/components/check/check.controller.js",
+					"buffer": 6,
+					"file": "client/components/model/Reference.model.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2464,
+						"buffer_size": 1586,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1038,
-								1038
+								715,
+								715
 							]
 						],
 						"settings":
@@ -705,247 +932,7 @@
 						"translation.y": 367.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "client/components/check-store/check-store.controller.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2800,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "client/components/model/variousSegment.model.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4197,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2819,
-								2819
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1024.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "client/components/check-helper/ataspec-helper.service.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10445,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3282,
-								3282
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2248.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "check.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10260,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/Users/remi/Google Drive/ITECH/BSEA00000058.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7423,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								840,
-								867
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2367.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/Users/remi/Downloads/retour_BSEA00000058 (6).xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5266,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								78,
-								78
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1467.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/Users/remi/Downloads/retour_BSEA00000058 (3).xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4770,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								78,
-								78
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/Users/remi/Downloads/retour_BSEA00000058.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 981,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								78,
-								78
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
 					"type": "text"
 				}
 			]

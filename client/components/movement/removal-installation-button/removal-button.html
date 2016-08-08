@@ -1,0 +1,5 @@
+<div  ng-if="$ctrl.part.status == 'original' || $ctrl.part.status  == 'removed'" 
+  ng-click="$ctrl.click()" 
+  ng-class="{grey :  $ctrl.part.status == 'original', black : $ctrl.part.status == 'removed'}">
+  <span class="fa-stack"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-arrow-down fa-stack-1x"></i></span>
+</div>

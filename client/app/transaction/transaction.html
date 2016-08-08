@@ -1,0 +1,6 @@
+<navbar></navbar>
+<div class="container">
+	<select-position data = "$ctrl.parts" ng-if = "!$ctrl.removal&&!$ctrl.installation" on-edit-removal="$ctrl.editRemoval(position)" on-edit-installation="$ctrl.editInstallation(position)"></select-position>
+	<removal removal = "$ctrl.removal" ng-if = "$ctrl.removal"></removal>
+	<installation installation = "$ctrl.installation" inter = "$ctrl.inter" ng-if = "$ctrl.installation"></installation>
+</div>

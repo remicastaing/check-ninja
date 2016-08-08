@@ -1,18 +1,18 @@
 'use strict';
 
 angular.module('itechApp')
-.factory('Kardex', function (store, HDR_Segment, AID_Segment, InstalledPart) {
+.factory('Kardex', function (store, HDR_Segment, AID_Segment, InstalledPart, ATA2K) {
   var Kardex = store.defineResource({
     name: 'Kardex',
-    idAttribute : 'REG',
+    idAttribute : 'AIN',
     relations: {
       hasOne: {
         HDR_Segment: {
-          localKey: 'REG',
+          localKey: 'AIN',
           localField: 'HDR_Segment'
         },
         AID_Segment: {
-          localKey: 'REG',
+          localKey: 'AIN',
           localField: 'AID_Segment'
         }               
       },
@@ -23,89 +23,130 @@ angular.module('itechApp')
             localField: 'InstalledParts',
             // foreignKey is the "join" field
             // the name of the field on a comment that points to its parent user
-            foreignKey: 'REG'
+            foreignKey: 'AIN'
           }
         }
       },
-      beforeCreate: beforeCreate
+      beforeCreate: beforeCreateKardex,
+      beforeDestroy: beforeDestroyKardex
     }
-  );
+    );
 
-  function beforeCreate(Resource, kdx, cb){
-    var REG = kdx.Kardex.AircraftInformation.AID_Segment.REG;
+  function beforeCreateKardex(Resource, kdx, cb){
 
-    kdx.Kardex.AircraftInformation.AID_Segment.id = REG;
+    var AIN = kdx.Kardex.AircraftInformation.AID_Segment.AIN;
+    var RDT = new Date(kdx.Kardex.HDR_Segment.RDT);
+
+    Date.prototype.subDays=function(d){return this.valueOf()-864E5*d;};
+    
+
+    kdx.Kardex.AircraftInformation.AID_Segment.id = AIN;
     var kardex = {
-      REG : REG
+      AIN : AIN,
+      WPI : kdx.WPI
     };
-    kdx.Kardex.HDR_Segment.id = REG;
+    kdx.Kardex.HDR_Segment.id = AIN;
 
 
-    var createSegments= _.map(kdx.Kardex.AircraftInformation.InstallDetails.InstalledPart, function(part){
-      part.REG= REG;
-      InstalledPart.create(part);
+    var createSegments= _.map(Kardex.partList(kdx.Kardex.AircraftInformation.InstallDetails.InstalledPart, AIN, RDT), function(partDetails){     
+      return InstalledPart.create(partDetails);
     });
     createSegments.push(HDR_Segment.create(kdx.Kardex.HDR_Segment));
     createSegments.push(AID_Segment.create(kdx.Kardex.AircraftInformation.AID_Segment));
 
 
-     store.utils.Promise.all(createSegments).then(function(){
-        cb(null, kardex);
-     });
+
+    store.utils.Promise.all(createSegments).then(function(){
+      cb(null, kardex);
+    }, function(err){console.log(err);});
   };
 
-  Kardex.partList = function(InstallDetails){
-      var partList = [];
+  function beforeDestroyKardex(Resource, kardex, cb) {
 
-      function makePartList(InstalledParts, NHA){
-        InstalledParts = InstalledParts.constructor === Array ? InstalledParts : [InstalledParts];
+    var AIN = kardex.AIN;
+    //kardex = Kardex.loadRelations(Kardex);
+    console.log(kardex);
+    var del = [InstalledPart.destroyAll({
+      where:{
+        'AIN':{
+          '==' : AIN
+        }
+      }
+    })];
+    del.push(HDR_Segment.destroy(AIN));
+    del.push(AID_Segment.destroy(AIN));
 
-        _(InstalledParts).forEach(function(InstalledPart){
-          var part = {
-            CPI : InstalledPart.CPI,
-            MPN : InstalledPart.MPN,
-            SER: InstalledPart.SER,
-            PDT: InstalledPart.PDT,
-            CLE : InstalledPart.CLE,
-            NHA : NHA,
-          };
-          partList.push(part);
-          if (InstalledPart.hasOwnProperty('InstalledPart')) {
-            part.$$treeLevel = 0 + InstalledPart.CLE -1;
-            makePartList(InstalledPart.InstalledPart, InstalledPart.CPI);
-          }
-          
+    
 
-        });
+    store.utils.Promise.all(del).then(function(){
+      cb(null, kardex);
+    })
+  };
 
-        return partList;
+  Kardex.partList = function(InstallDetails, AIN, RDT){
+    var partList = [];
+    var index = 1;
 
-        
+    function makePartList(InstalledParts, NHA){
+      InstalledParts = InstalledParts.constructor === Array ? InstalledParts : [InstalledParts];
 
-      };
+      _(InstalledParts).forEach(function(InstalledPart){
 
-      return makePartList(InstallDetails);
+        var part = {
+          id : AIN + '/' + InstalledPart.CPI,
+          CPI : InstalledPart.CPI,
+          MFR : InstalledPart.MFR,
+          MPN : InstalledPart.MPN,
+          SER : InstalledPart.SER,
+          PDT: InstalledPart.PDT,      
+          status : InstalledPart.SER ? 'original' : 'none',
+          AIN : AIN,
+          NHA : AIN + '/' + NHA,
+        };
+        part.index = index++;
 
-    }
+        if (InstalledPart.SER) {
+          part.DOI = InstalledPart.DOI;
+        } else {}
+
+        if (InstalledPart.hasOwnProperty('ATT_Segment')) {
+
+
+          part.ATT_Segment = InstalledPart.ATT_Segment;
+
+          if (RDT) {
+            _.forEach(Array.isArray(part.ATT_Segment) ? part.ATT_Segment : [part.ATT_Segment], function(att){
+              att.ODT = RDT.subDays(att.ODT);
+            }); 
+          } 
+        }
+
+        if (InstalledPart.hasOwnProperty('ATN_Segment')) {
+          part.ATN_Segment = InstalledPart.ATN_Segment;
+        }
+
+
+        partList.push(part);
+        if (InstalledPart.hasOwnProperty('InstalledPart')) {
+          part.$$treeLevel = 0 + InstalledPart.CLE -1,
+          makePartList(InstalledPart.InstalledPart, InstalledPart.CPI);
+        }
+
+
+      });
+
+      return partList;
+
+
+
+    };
+
+    return makePartList(InstallDetails);
+
+  }
 
   return Kardex;
 
 })
-.factory('InstalledPart', function (store) {
-  return store.defineResource({
-    name: 'InstalledPart',
-    relations: {
-      belongsTo: {
-        Kardex: {
-            // localField is for linking relations
-            // user.profile -> profile of the user
-            localField: 'Kardex',
-            // foreignKey is the "join" field
-            // the name of the field on a profile that points to its parent user
-            localKey: 'REG'
-          }
-        }
-      }
-    }
-    );
-});
+.run(function (Kardex) {})
+

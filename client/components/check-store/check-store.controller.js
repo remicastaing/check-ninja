@@ -20,9 +20,11 @@ angular.module('itechApp')
     enableRowSelection: true,
     rowTemplate: rowTemplate,
     columnDefs: [
-    { field: 'WPI', name: 'WPI', displayName: 'WPI', enableHiding: false, width: '30%' },
-    { field: 'items', name: 'items', enableHiding: false, enableSorting: true, enableFiltering: false, enableColumnMenu: false , width: '10%',  },
-    { field: 'executedItems', name: 'Executed', enableHiding: false, enableSorting : true, enableFiltering: false, enableColumnMenu: false , width: '10%' },
+    { field: 'AMC', name: 'AMC', displayName: 'AMC', enableHiding: false, width: '20%' },
+    { field: 'AIN', name: 'AIN', displayName: 'AIN', enableHiding: false, width: '20%' },
+    { field: 'WPI', name: 'WPI', displayName: 'WPI', enableHiding: false, width: '20%' },
+    { field: 'items', name: 'items', enableHiding: false, enableSorting: true, enableFiltering: false, enableColumnMenu: false , width: '20%',  },
+    { field: 'executedItems', name: 'Executed', enableHiding: false, enableSorting : true, enableFiltering: false, enableColumnMenu: false , width: '20%' },
  //   { field: 'edit', name: '  ', cellTemplate: 'components/check-store/buttons.html',enableSorting: false, enableCellEdit: false, enableFiltering: false, enableColumnMenu: false },
     ]
   };
@@ -33,7 +35,7 @@ angular.module('itechApp')
   });
 
   function editRow(grid, row) {
-    $state.go('check', {WPI:row.entity.WPI});
+    $state.go('check', {AMC:row.entity.AMC, AIN:row.entity.AIN, WPI:row.entity.WPI});
   }
 
 

@@ -4,9 +4,9 @@ angular.module('itechApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('check', {
-        url: '/check/:WPI',
+        url: '/check/:AMC/:AIN/:WPI',
         templateUrl: 'app/check/check.html',
         controller: 'CheckRouteCtrl',
-        controllerAs: 'check'
+        controllerAs: '$ctrl'
       });
   });

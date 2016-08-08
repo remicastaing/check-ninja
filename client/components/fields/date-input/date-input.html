@@ -1,0 +1,6 @@
+<div class="input-group ">
+	<input type="text" class="form-control" uib-datepicker-popup  ng-model="$ctrl.date" is-open="$ctrl.opened" min-date="$ctrl.minDate" max-date="$ctrl.maxDate" datepicker-options="$ctrl.dateOptions" date-disabled="$ctrl.disabled(date, mode)" close-text="Close" />
+	<span class="input-group-addon">  
+		<span class="glyphicon glyphicon-calendar" ng-click="$ctrl.open()"></span>
+	</span>
+</div>

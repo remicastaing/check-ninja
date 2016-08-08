@@ -38,6 +38,9 @@ module.exports = function(config) {
       'client/bower_components/js-data-angular/dist/js-data-angular.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       'client/bower_components/js-data-localstorage/dist/js-data-localstorage.js',
+      'client/bower_components/utf8/utf8.js',
+      'client/bower_components/localforage/dist/localforage.js',
+      'client/bower_components/js-data-localforage/dist/js-data-localforage.js',
       // endbower
       'node_modules/socket.io-client/socket.io.js',
       'client/app/app.js',

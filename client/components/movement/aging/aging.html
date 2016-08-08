@@ -1,0 +1,48 @@
+<label for="aging">Aging</label>
+
+<div class="panel panel-default" id="aging">
+	<div class="panel-body">	
+		<table class="table table-striped" > 
+			<thead> 
+				<tr> 
+					<th></th>
+					<th>FH</th>
+					<th>CAL</th>
+					<th>CY</th>
+					<th ng-repeat="NSC in $ctrl.NSC">{{NSC}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr> 
+					<th scope="row">Since new</th>
+					<td><input  class="form-control" id="exampleInputEmail1"  ng-model = "$ctrl.att[$ctrl.posATT.N].OTT"></td>
+					<td><date-input date = "$ctrl.att[$ctrl.posATT.N].ODT"></date-input></td>
+					<td><input  class="form-control" id="exampleInputEmail1"  ng-model = "$ctrl.att[$ctrl.posATT.N].OPC"></td>
+					<td ng-repeat="NSC in $ctrl.NSC"><input  class="form-control" id="exampleInputEmail1"  ng-model = "$ctrl.atn[$ctrl.posATN.N[NSC]].OTN"></td>
+				</tr>
+				<tr> 
+					<th scope="row">Since 1.Insp.</th>
+					<td><input  class="form-control" id="exampleInputEmail1"  ng-model = "$ctrl.att[$ctrl.posATT.X].OTT"></td>
+					<td><date-input date = "$ctrl.att[$ctrl.posATT.X].ODT"></date-input></td>
+					<td><input  class="form-control" id="exampleInputEmail1"  ng-model = "$ctrl.att[$ctrl.posATT.X].OPC"></td>
+					<td ng-repeat="NSC in $ctrl.NSC"><input  class="form-control" id="exampleInputEmail1"  ng-model = "$ctrl.atn[$ctrl.posATN.X[NSC]].OTN"></td>
+				</tr> 
+				<tr> 
+					<th scope="row">Since 2.Insp.</th> 			
+					<td><input  class="form-control" id="exampleInputEmail1"  ng-model = "$ctrl.att[$ctrl.posATT.Y].OTT"></td>
+					<td><date-input date = "$ctrl.att[$ctrl.posATT.Y].ODT"></date-input></td>
+					<td><input  class="form-control" id="exampleInputEmail1"  ng-model = "$ctrl.att[$ctrl.posATT.Y].OPC"></td>
+					<td ng-repeat="NSC in $ctrl.NSC"><input  class="form-control" id="exampleInputEmail1"  ng-model = "$ctrl.atn[$ctrl.posATN.Y[NSC]].OTN"></td>
+				</tr>
+				<tr> 
+					<th scope="row">Since Overh.</th>
+					<td><input  class="form-control" id="exampleInputEmail1"  ng-model = "$ctrl.att[$ctrl.posATT.O].OTT"></td>
+					<td><date-input date = "$ctrl.att[$ctrl.posATT.O].ODT"></date-input></td>
+					<td><input  class="form-control" id="exampleInputEmail1"  ng-model = "$ctrl.att[$ctrl.posATT.O].OPC"></td>
+					<td ng-repeat="NSC in $ctrl.NSC"><input  class="form-control" id="exampleInputEmail1"  ng-model = "$ctrl.atn[$ctrl.posATN.O[NSC]].OTN"></td>
+				</tr>
+			</tbody>
+		</tbody>
+	</table>
+</div>
+</div>

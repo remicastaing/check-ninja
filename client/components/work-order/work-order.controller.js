@@ -7,7 +7,7 @@
     .module('itechApp')
     .controller('WorkOrderController', WorkOrderController);
 
-  function WorkOrderController($scope, AWR_Segment)  {
+  function WorkOrderController($scope, $state, AWR_Segment)  {
     var vm = this;
 		
     var wo;
@@ -22,36 +22,16 @@
       vm.wo = wo;
     }
 
-    vm.popup = {
-      TED : {opened: false}
-    };
-
-    vm.open = function (field) {
-      vm.popup[field].opened = true;
-    };
-
-    vm.maxDate = new Date(2020, 5, 22);
-    vm.minDate = null;
-
-    vm.dateOptions = {
-      formatYear: 'yy',
-      startingDay: 1
-    };
-
-    vm.disabled = disabledCalendar;
-
     vm.save = function() {
       console.log(wo);
       wo.DSUpdate(wo)
       .then(function(data){
+        console.log('save');
+        $state.go('check', {WPI: wo.WPI});
       },
       function(err){console.log(err);});
     };
 
   };
-
-function disabledCalendar(date, mode) {
-  return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
-};
 
 })();

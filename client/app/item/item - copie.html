@@ -1,0 +1,56 @@
+<navbar></navbar>
+<div class="container">
+
+	<div class="panel panel-info">
+
+		<div class="panel-heading ">
+			<button type="button" class="close" aria-label="Close" ui-sref="check({WPI:$ctrl.WPI})"><span aria-hidden="true">&times;</span></button>
+			<h1 class="panel-title" ng-if="$ctrl.itemType!=4">Card <b>{{$ctrl.data.HRI}}</b></h1>
+			<h1 class="panel-title" ng-if="$ctrl.itemType==4">Work Order <b>{{$ctrl.data.HRI}}</b></h1>
+		</div>
+		<div class="panel-body">
+			<card data="$ctrl.data" ng-if="$ctrl.itemType!=4"></card>
+			<work-order data="$ctrl.data" ng-if="$ctrl.itemType==4"></work-order>
+		</div>
+	</div>
+
+	<div class="panel panel-info" >
+		<div class="panel-heading ">
+			<h1 class="panel-title">Findings </h1>
+		</div>
+		<div class="panel-body">
+			<finding-list data="$ctrl.data" on-edit-finding = "$ctrl.editFinding(finding)" ng-if="!$ctrl.selectedfinding" ></finding-list>
+			<finding finding="$ctrl.selectedfinding" ng-if="$ctrl.selectedfinding"></finding>
+		</div>
+		<div class="panel-footer ng-if="!$ctrl.selectedfinding"">
+			<div class="pull-right bg-info">
+				<new-finding selectedfinding = "$ctrl.selectedfinding" hri = "$ctrl.HRI" ng-if="!$ctrl.selectedfinding"></new-finding>
+				<save-delete-cancel data = "$ctrl.selectedfinding" model = "$ctrl.findingModel" ng-if="$ctrl.selectedfinding"></save-delete-cancel>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+	<div class="panel panel-info" >
+		
+		<div class="panel-heading ">
+			<h1 class="panel-title">Removed and Installed Parts</h1>
+		</div>
+
+		<div class="panel-body">
+			<movement ain="$ctrl.AIN" hri="$ctrl.HRI" data = "$ctrl.data"
+				removal = "$ctrl.removal" installation  = "$ctrl.installation" ng-if="!$ctrl.removal&&!$ctrl.installation"></movement>
+			<removal removal = "$ctrl.removal" ng-if = "$ctrl.removal"></removal>
+			<installation installation = "$ctrl.installation" amc = "$ctrl.AMC" ng-if = "$ctrl.installation"></installation>
+		</div>
+
+		<div class="panel-footer ng-if="!$ctrl.selectedfinding"">
+			<div class="pull-right bg-info">
+				<new-movement ain="$ctrl.AIN" hri="$ctrl.HRI" ng-if="!$ctrl.removal&&!$ctrl.installation" removal = "$ctrl.removal" installation = "$ctrl.installation"></new-movement>	
+				<save-delete-cancel data = "$ctrl.removal" model = "$ctrl.removalModel" ng-if="$ctrl.removal"></save-delete-cancel>
+				<save-delete-cancel data = "$ctrl.installation" model = "$ctrl.installationModel" ng-if="$ctrl.installation"></save-delete-cancel>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>

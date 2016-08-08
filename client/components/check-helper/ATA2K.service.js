@@ -452,12 +452,13 @@ function toJson(segmentName, segment) {
   return _.chain(segment)
   .pick(_.keys(definition[segmentName]))
   .mapValues(function(value, key){
-    return definition[segmentName][key].type==='date'? formatDate(value) : value;
+    return definition[segmentName][key].type==='date'? formatDate(value) : utf8.encode(value);
   })
   .value();
 }
 
 function formatDate(date) {
+  if (date===null) return '0001-01-01';
   var d = new Date(date),
   month = '' + (d.getMonth() + 1),
   day = '' + d.getDate(),
@@ -472,5 +473,6 @@ function formatDate(date) {
 return {
   definition : definition,
   toJson : toJson,
+  formatDate : formatDate,
 }
 });

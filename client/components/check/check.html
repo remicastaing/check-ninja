@@ -3,73 +3,50 @@
 
 		<h1 class="panel-title">
 			<button type="button" class="close" aria-label="Close" ui-sref="checks"><span aria-hidden="true">&times;</span></button>
-			Work Package <b>{{editcheck.WPI_Segment.WPI}}</b>
+			Work Package <b>{{$ctrl.data.WPI_Segment.WPI}}</b>
 		</h1>
 
 	</div>
 	<div class="panel-body">
 
+			<field label="AIN" var="$ctrl.data.AID_Segment.AMC" class="form-group col-md-4"></field>
 
-		<div class="row">
-			<div class="form-group col-md-4">
-				<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-				<div class="input-group">
-					<div class="input-group-addon">AIN</div>
-					<input type="text" class="form-control pull-right" id="exampleInputAmount" value="{{editcheck.data.AID_Segment.AIN}}" disabled>
-				</div>
-			</div>
+			<field label="AIN" var="$ctrl.data.AID_Segment.AIN" class="form-group col-md-4"></field>
 
-			<div class="form-group col-md-4">
-				<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-				<div class="input-group">
-					<div class="input-group-addon">REG</div>
-					<input type="text" class="form-control pull-right" id="exampleInputAmount" value="{{editcheck.data.AID_Segment.REG}}" disabled>
-				</div>
-			</div>
+			<field label="REG" var="$ctrl.data.AID_Segment.REG" class="form-group col-md-4"></field>
 
-			<div class="form-group col-md-4">
-				<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-				<div class="input-group">
-					<div class="input-group-addon">WHO</div>
-					<input type="text" class="form-control pull-right" id="exampleInputAmount" value="{{editcheck.data.HDR_Segment.WHO}}" disabled>
-				</div>
-			</div>
-		</div>
 
-		</br>
 
-		<div class="row">
-		<div class="col-md-6">
-			<div class="input-group ">
-					<div class="input-group-addon">WOD</div>
-					<input type="text" class="form-control" uib-datepicker-popup  ng-model="editcheck.data.WPI_Segment.WOD" is-open="editcheck.popup['WOD'].opened" min-date="editcheck.minDate" max-date="editcheck.maxDate" datepicker-options="editcheck.dateOptions" date-disabled="editcheck.disabled(date, mode)" close-text="Close" />
-					<span class="input-group-addon">	<span class="glyphicon glyphicon-calendar" ng-click="editcheck.open('WOD')"></span>
-					</span>
-				</div>
-				</div>
-				<div class="col-md-6">
-				<div class="input-group">
-					<div class="input-group-addon">WOE</div>
-					<input type="text" class="form-control" uib-datepicker-popup ng-model="editcheck.data.WPI_Segment.WOE" is-open="editcheck.popup['WOE'].opened" min-date="editcheck.minDate" max-date="editcheck.maxDate" datepicker-options="editcheck.dateOptions" date-disabled="editcheck.disabled(date, mode)" ng-required="true" close-text="Close" />
-					<span class="input-group-addon">	<span class="glyphicon glyphicon-calendar" ng-click="editcheck.open('WOE')"></span>
-					</span>
-				</div>
-		</div>
-		</div>
+
+		<form class="form-horizontal">
+        <div class="form-group col-md-6">
+          <label class="col-sm-4 control-label">WOD</label>
+          <div class="col-sm-8">
+            <date-input date = "$ctrl.data.WPI_Segment.WOD"></date-input>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label class="col-sm-4 control-label">WOE</label>
+          <div class="col-sm-8">
+            <date-input date = "$ctrl.data.WPI_Segment.WOE"></date-input>
+          </div>
+        </div>
+      </form>
 
 	</div>
 
+
 	<div class="panel-footer ">
 	<div class="pull-right bg-info">
-		<button type="button" class="btn   btn-danger " ng-click="editcheck.delete()" >
+		<button type="button" class="btn   btn-danger " ng-click="$ctrl.delete()" >
 			<i class="fa fa-trash fa-1x fa-fw" aria-hidden="true"></i> 
 		</button>
 
-		<button type="button" class="btn  btn-info" ng-click="editcheck.exportRow()" download="{{editcheck.exportFile}}" ng-href="{{editcheck.exportUrl }}" ng-disabled="!editcheck.data.WPI_Segment.WOD">
+		<button type="button" class="btn  btn-info" ng-click="$ctrl.exportRow()" download="{{$ctrl.exportFile}}" ng-href="{{$ctrl.exportUrl }}" ng-disabled="!$ctrl.data.WPI_Segment.WOD">
 			<i class="fa fa-cloud-download fa-1x fa-fw" aria-hidden="true"></i> 
 		</button>
 
-		<button type="button" class="btn   btn-info" ng-click="editcheck.save()" >
+		<button type="button" class="btn   btn-info" ng-click="$ctrl.save()" >
 			<i class="fa fa-floppy-o fa-1x fa-fw" aria-hidden="true"></i> 
 		</button>
 
@@ -79,6 +56,5 @@
 
 
 </div>
-</div>
 
-<div ui-grid="editcheck.gridOptions"></div>
+<div ui-grid="$ctrl.gridOptions" ng-style="$ctrl.getTableHeight()"></div>
