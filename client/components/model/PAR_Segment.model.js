@@ -33,9 +33,24 @@ angular.module('itechApp')
       },
       methods : {
         toJson: function(){
-          var json = ATA2K.toJson('PAR_Segment', this);
-          json.ATT_Segment = this.ATT_Segment;
-          if (this.ATN_Segment) json.ATN_Segment = this.ATN_Segment;
+          var par = this;
+          var json = ATA2K.toJson('PAR_Segment', par);
+          
+          json.ATT_Segment = _.cloneDeep(par.ATT_Segment);
+
+          _.forEach(json.ATT_Segment, function(att){
+              if (att.OTT=== null) delete att.OTT;
+              if (att.OPC=== null) delete att.OPC;
+              if (att.ODT=== null) {
+                delete att.ODT;
+              } else {
+                console.log(par);
+                console.log(att);
+                att.ODT = ATA2K.dateDiff(par.RED, att.ODT);
+              }          
+          })
+
+          if (par.ATN_Segment) json.ATN_Segment = par.ATN_Segment;
           return json;
         },
         isDeletable : function () {
