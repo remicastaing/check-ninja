@@ -27,10 +27,29 @@ angular.module('itechApp')
       },
       methods : {
         toJson: function(){
-          console.log(this);
-          var json = ATA2K.toJson('PAR_Segment', this);
-          json.ATT_Segment = this.ATT_Segment;
+          var json = ATA2K.toJson('IPT_Segment', this);
+
+          var ipt = this;
+
+          json.IAT_Segment = _.cloneDeep(this.IAT_Segment);
+
+
+          _.remove(json.IAT_Segment, function(iat) {
+            return (iat.OTT=== null) && (iat.OPC=== null) && (iat.ODT=== null);
+          });
+
+          console.log(json);
+          _.forEach(json.IAT_Segment, function(iat){
+              if (iat.OTT=== null) delete iat.OTT;
+              if (iat.OPC=== null) delete iat.OPC;
+              if (iat.ODT=== null) {
+                delete iat.ODT;
+              } else {
+                iat.ODT = ATA2K.dateDiff(ipt.DOI, iat.ODT);
+              }          
+          })
           if (this.ATN_Segment) json.ATN_Segment = this.ATN_Segment;
+          console.log(json);
           return json;
         },
       },
@@ -38,6 +57,16 @@ angular.module('itechApp')
       beforeUpdate : beforeUpdate
     }
     );
+
+    function beforeUpdate(Resource, ipt, cb){
+      ipt.WPI = ipt.HRI.split('/')[0];
+      ipt.DOI = ATA2K.convertDate(ipt.DOI);
+      _.forEach(ipt.IAT_Segment, function(att){
+        att.ODT = ATA2K.convertDate(att.ODT);
+      });
+
+      cb(null, ipt);
+    }
 }).run(function (IPT_Segment) {})
 
 function beforeCreateIPTSegment(Resource, ipt, cb){
@@ -46,29 +75,5 @@ function beforeCreateIPTSegment(Resource, ipt, cb){
   cb(null, ipt);
 }
 
-function beforeUpdate(Resource, ipt, cb){
-  ipt.WPI = ipt.HRI.split('/')[0];
-  _.forEach(ipt.ATT_Segment, function(att){
-    att.ODT = convertDate(att.ODT);
-  });
 
-  cb(null, ipt);
-}
 
-  function convertDate(date) {
-    switch (typeof date)
-    {
-      case "undefined":
-        date = null;
-        break;
-      case "object":
-      case "string":
-        date = date === '0001-01-01' ? null: Date.parse(date);
-        break;
-      case "number":
-        break;
-
-    };
-
-    return date;
-  }

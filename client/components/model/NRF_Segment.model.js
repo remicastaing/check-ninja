@@ -38,7 +38,7 @@ angular.module('itechApp')
             NCP : 'D',
             APF : 'TS',
             AWR_Segment : ATA2K.toJson('AWR_Segment', this),
-            NFD : this.NFD
+            NFD : ATA2K.formatDate(this.NFD)
           };
           console.log(json);
           return json;

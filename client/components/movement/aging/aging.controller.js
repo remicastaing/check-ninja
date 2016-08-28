@@ -2,33 +2,27 @@
 (function(){
 
 function Aging() {
-  var vm = this;
+  var ctrl = this;
 
   
 
-  vm.posATT = {};
-  _(vm.att).forEach(function(att, key){
-    vm.posATT[att.TRF]=key; 
+  ctrl.posATT = {};
+  _(ctrl.att).forEach(function(att, key){
+    ctrl.posATT[att.TRF]=key; 
   });
 
-  
 
-  // vm.NSC = _.uniq(_.map(vm.atn,function(atn){ return atn.NSC}));
+   ctrl.$doCheck = function () {
 
-  // vm.posATN = {}
+    ctrl.NSC = _.uniq(_.map(ctrl.atn,function(atn){ return atn.NSC}));
 
-  //  _(vm.atn).forEach(function(atn, key){
-  //   _.set(vm.posATN,atn.TRF+'.'+atn.NSC ,key);
-  // }); 
+      ctrl.posATN = {}
 
-   vm.$doCheck = function () {
-    vm.NSC = _.uniq(_.map(vm.atn,function(atn){ return atn.NSC}));
-
-      vm.posATN = {}
-
-       _(vm.atn).forEach(function(atn, key){
-        _.set(vm.posATN,atn.TRF+'.'+atn.NSC ,key);
+       _(ctrl.atn).forEach(function(atn, key){
+        _.set(ctrl.posATN,atn.TRF+'.'+atn.NSC ,key);
       });
+
+
   };
 
 

@@ -31,15 +31,16 @@
       
       if (installation.MPN) {
         ctrl.selected = _.find(inter, { 'MPN': installation.MPN , 'MFR': installation.MFR  });
+        if (!installation.ATN_Segment && ctrl.selected.initATN_Segment().length>0) {
+          ctrl.installation.ATN_Segment = ctrl.selected.initATN_Segment();
+        }
       }
 
-      if (!installation.ATT_Segment) {
-        installation.ATT_Segment = ctrl.selected.initATT_Segment();
+      if (!installation.IAT_Segment) {
+        installation.IAT_Segment = Reference.initATT_Segment();
       }
 
-      if (!installation.ATN_Segment && ctrl.selected.initATN_Segment().length>0) {
-        ictrl.installation.ATN_Segment = ctrl.selected.initATN_Segment();
-      }
+
 
     }, function(err){console.log(err);});
     
@@ -47,13 +48,15 @@
       installation.MPN = ctrl.selected.MPN;
       installation.MFR = ctrl.selected.MFR;
       installation.PDT = ctrl.selected.PDT;
-      installation.ATT_Segment = ctrl.selected.initATT_Segment();
+      installation.IAT_Segment = ctrl.selected.initATT_Segment();
 
       if (ctrl.selected.initATN_Segment().length>0) {
         ctrl.installation.ATN_Segment = ctrl.selected.initATN_Segment();
       } else {
         delete ctrl.installation.ATN_Segment;
       };
+
+      console.log(installation);
     }
   };
 

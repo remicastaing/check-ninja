@@ -116,7 +116,7 @@ angular.module('itechApp')
 
           if (RDT) {
             _.forEach(Array.isArray(part.ATT_Segment) ? part.ATT_Segment : [part.ATT_Segment], function(att){
-              att.ODT = RDT.subDays(att.ODT);
+              att.ODT = part.DOI.subDays(att.ODT);
             }); 
           } 
         }
