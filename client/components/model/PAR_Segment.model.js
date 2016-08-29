@@ -1,5 +1,6 @@
 'use strict';
 
+
 angular.module('itechApp')
 .factory('PAR_Segment', function (store, ATA2K, InstalledPart) {
   return store.defineResource({
