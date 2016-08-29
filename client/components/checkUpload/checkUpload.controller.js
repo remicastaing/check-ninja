@@ -43,11 +43,8 @@
             vm.kardex = kardex;
             var AIN = kardex.Kardex.AircraftInformation.AID_Segment.AIN;
 
-            console.log(kardex);
-
             if (_.isEqual(check.ScheduledMaintenance.HDR_Segment, kardex.Kardex.HDR_Segment) && _.isEqual(check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment, kardex.Kardex.AircraftInformation.AID_Segment)) {
             	var partlist= Kardex.partList(kardex.Kardex.AircraftInformation.InstallDetails.InstalledPart,AIN);
-                console.log(partlist);
             	vm.gridOptions = {
     	        	data : partlist,
     	        	enableSorting: true,
@@ -83,7 +80,9 @@
             kardex.WPI = check.ScheduledMaintenance.ScheduledMaintenanceEvents.WorkPackageDetails.WPI_Segment.WPI;
 
             ScheduledMaintenance.create(check)
-            .then(Kardex.create(kardex), function(err){console.log(err);})
+            .then(function(){
+                return Kardex.create(kardex);
+            }, function(err){console.log(err);})
             .then(function() {
               return $state.go('checks'); 
             }, function(err){console.log(err);});
