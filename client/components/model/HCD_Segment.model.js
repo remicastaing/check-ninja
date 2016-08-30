@@ -51,15 +51,17 @@ angular.module('itechApp')
       	toJson: function(){
 
           var hcd_json = ATA2K.toJson('HCD_Segment', this);
-          if (typeof this.AWR_Segment === 'object' ) {
-            hcd_json.AWR_Segment = ATA2K.toJson('AWR_Segment', this.AWR_Segment);
-          }
+
 
           if (this.NRF_Segments.length>0) {
             hcd_json.NRF_Segment = _.map(this.NRF_Segments).map(function (nrf) {
               console.log(nrf);
               return nrf.toJson();
             });
+          }
+
+          if (typeof this.AWR_Segment === 'object' ) {
+            hcd_json.AWR_Segment = ATA2K.toJson('AWR_Segment', this.AWR_Segment);
           }
 
           var res = {
