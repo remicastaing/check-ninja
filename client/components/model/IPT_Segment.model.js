@@ -49,6 +49,10 @@ angular.module('itechApp')
               }          
           })
           if (this.ATN_Segment) json.ATN_Segment = this.ATN_Segment;
+
+          _.remove(json.ATN_Segment, function(atn){
+            return atn.OTN === null;
+          });
           console.log(json);
           return json;
         },

@@ -123,11 +123,36 @@ angular.module('itechApp')
           MMFR : installedPart.MFR,
           MPDT : installedPart.PDT,
         }
+      },
+      getReference: function(){
+        var part = this;
+
+        var ref = [{
+          MPN : this.MPN,
+          MFR : this.MFR,
+          PDT : this.PDT,
+          IAT_Segment : Reference.initATT_Segment,
+          initATN_Segment : initATN_Segment
+        }];
+
+        function initATN_Segment(){
+          return part.hasOwnProperty('ATN_Segment') ? _.forEach(part.ATN_Segment, function(atn){ atn.OTN= null;}) : [];
+        }
+
+        return ref;
       }      	
     },
     beforeCreate: beforeCreateInstalledPart,
   }
   );
+
+  InstalledPart.getReference = function(AIN, CPI){
+    return store.find('InstalledPart', AIN+'/'+CPI).then(function(part){
+      return part.getReference();
+    }, function(err){console.log(err);});
+
+  };
+
   return InstalledPart;
 })
 .run(function (InstalledPart) {});;

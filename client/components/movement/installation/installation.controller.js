@@ -6,49 +6,44 @@
 
     console.log(this);
 
-    var installation = ctrl.installation;
-
-
-    Reference.findInter(installation.MMPN, installation.MMFR, ctrl.amc)
+    Reference.findInter(ctrl.installation.MMPN, ctrl.installation.MMFR, ctrl.amc)
     .then(function(inter){
-      if (!inter) {
-        
-        inter = [{
-          MPN : installation.MMPN,
-          MFR : installation.MMFR,
-          PDT : installation.MPDT,
-          ATT_Segment : Reference.initATT_Segment
-        }]
+      if (!inter) {     
+        return InstalledPart.getReference(ctrl.ain, ctrl.installation.CPI);
+      } else {
+        return inter;
       }
+    })
+    .then(function(inter){
+
       ctrl.inter = inter;
 
       if (inter.length===1) {
         ctrl.selected = inter[0];
-        installation.MPN = ctrl.selected.MPN;
-        installation.MFR = ctrl.selected.MFR;
-        installation.PDT = ctrl.selected.PDT;
+        ctrl.installation.MPN = ctrl.selected.MPN;
+        ctrl.installation.MFR = ctrl.selected.MFR;
+        ctrl.installation.PDT = ctrl.selected.PDT;
       }
-      
-      if (installation.MPN) {
-        ctrl.selected = _.find(inter, { 'MPN': installation.MPN , 'MFR': installation.MFR  });
-        if (!installation.ATN_Segment && ctrl.selected.initATN_Segment().length>0) {
+
+      if (ctrl.installation.MPN) {
+        ctrl.selected = _.find(inter, { 'MPN': ctrl.installation.MPN , 'MFR': ctrl.installation.MFR  });
+  
+        if (!ctrl.installation.ATN_Segment && ctrl.selected.initATN_Segment().length>0) {
           ctrl.installation.ATN_Segment = ctrl.selected.initATN_Segment();
         }
       }
 
-      if (!installation.IAT_Segment) {
-        installation.IAT_Segment = Reference.initATT_Segment();
+      if (!ctrl.installation.IAT_Segment) {
+        ctrl.installation.IAT_Segment = Reference.initATT_Segment();
       }
-
-
 
     }, function(err){console.log(err);});
     
     ctrl.initInstallation = function(){
-      installation.MPN = ctrl.selected.MPN;
-      installation.MFR = ctrl.selected.MFR;
-      installation.PDT = ctrl.selected.PDT;
-      installation.IAT_Segment = ctrl.selected.initATT_Segment();
+      ctrl.installation.MPN = ctrl.selected.MPN;
+      ctrl.installation.MFR = ctrl.selected.MFR;
+      ctrl.installation.PDT = ctrl.selected.PDT;
+      ctrl.installation.IAT_Segment = ctrl.selected.initATT_Segment();
 
       if (ctrl.selected.initATN_Segment().length>0) {
         ctrl.installation.ATN_Segment = ctrl.selected.initATN_Segment();
@@ -56,7 +51,7 @@
         delete ctrl.installation.ATN_Segment;
       };
 
-      console.log(installation);
+      console.log(ctrl.installation);
     }
   };
 
@@ -67,7 +62,8 @@
     controller: Installation,
     bindings: {
       installation: '=',
-      amc : "="
+      amc : "=",
+      ain: "="
     }
   });
 
