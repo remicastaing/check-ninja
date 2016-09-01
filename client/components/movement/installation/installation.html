@@ -1,5 +1,5 @@
-<label for="removal">Removal</label>
-<div class="panel panel-default" id = "removal">
+<label for="installation">Installation</label>
+<div class="panel panel-default" id = "installation">
   <div class="panel-body">
 
     <div class="row">
@@ -23,7 +23,7 @@
 
       <field label="Description" var="$ctrl.installation.PDT" class="col-lg-6 col-md-6" labelclass = "col-lg-4 col-md-3" varclass = "col-lg-8 col-md-9" ng-if="$ctrl.installation"></field>
 
-  </div>
+    </div>
 
     <div class="row">
       <input-field label="Serial" var="$ctrl.installation.SER" class="col-lg-6 col-md-6" labelclass = "col-lg-4 col-md-3" varclass = "col-lg-8 col-md-9" ng-if="$ctrl.installation"></input-field>
@@ -42,7 +42,28 @@
 
     </div>
 
+  </div>
 </div>
+<aging att = "$ctrl.installation.IAT_Segment" atn = "$ctrl.installation.ATN_Segment" ng-if="$ctrl.installation.IAT_Segment"></aging>
+
+<a ng-if = "$ctrl.formerRemoval">
+  <label for="removal">Removal before</label>
+  <div class="panel panel-default" style = "cursor: pointer;" id = "removal" ng-click="$ctrl.switchToRemoval()">
+    <div class="panel-body">
+      <div class="row">
+
+        <field label="Part Nr." var="$ctrl.formerRemoval.MPN" class="col-lg-3 col-md-3" labelclass = "col-lg-4 col-md-3" varclass = "col-lg-8 col-md-9"></field>
+        <field label="Manuf." var="$ctrl.formerRemoval.MFR" class="col-lg-3 col-md-3" labelclass = "col-lg-4 col-md-3" varclass = "col-lg-8 col-md-9"></field>
+        <field label="Serial Nr." var="$ctrl.formerRemoval.SER" class="col-lg-3 col-md-3" labelclass = "col-lg-4 col-md-3" varclass = "col-lg-8 col-md-9"></field>
+        <field label="Date of Installation" var="$ctrl.formerRemoval.DOI" class="col-lg-3 col-md-3" labelclass = "col-lg-4 col-md-3" varclass = "col-lg-8 col-md-9"></field>
+
+      </div>
+
+
+    </div>
+
+
+
+  </div>
 </div>
-    <aging att = "$ctrl.installation.IAT_Segment" atn = "$ctrl.installation.ATN_Segment" ng-if="$ctrl.installation.IAT_Segment"></aging>
 

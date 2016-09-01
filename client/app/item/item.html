@@ -29,7 +29,7 @@
 					<movement ain="$ctrl.AIN" hri="$ctrl.HRI" data = "$ctrl.item"
 					removal = "$ctrl.removal" installation  = "$ctrl.installation" ng-if="!$ctrl.removal&&!$ctrl.installation"></movement>
 					<removal removal = "$ctrl.removal" ng-if = "$ctrl.removal"></removal>
-					<installation installation = "$ctrl.installation" amc = "$ctrl.AMC" ain="$ctrl.AIN" ng-if = "$ctrl.installation"></installation>
+					<installation installation = "$ctrl.installation" removal = "$ctrl.removal" amc = "$ctrl.AMC" ain="$ctrl.AIN" ng-if = "$ctrl.installation"></installation>
 				</uib-tab>
 			</uib-tabset>
 

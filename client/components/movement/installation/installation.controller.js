@@ -1,8 +1,9 @@
 'use strict';
 (function(){
 
-  function Installation(Reference, IPT_Segment, InstalledPart) {
+  function Installation(Reference, IPT_Segment, InstalledPart, PAR_Segment) {
     var ctrl = this;
+    var formerRemoval;
 
     console.log(this);
 
@@ -38,6 +39,8 @@
       }
 
     }, function(err){console.log(err);});
+
+    PAR_Segment.find(ctrl.ain+'/'+ctrl.installation.CPI).then(function(par){ctrl.formerRemoval = par;});
     
     ctrl.initInstallation = function(){
       ctrl.installation.MPN = ctrl.selected.MPN;
@@ -53,6 +56,11 @@
 
       console.log(ctrl.installation);
     }
+
+    ctrl.switchToRemoval = function (){
+      ctrl.removal = ctrl.formerRemoval;
+      ctrl.installation = null;
+    }
   };
 
 
@@ -62,6 +70,7 @@
     controller: Installation,
     bindings: {
       installation: '=',
+      removal : '=?',
       amc : "=",
       ain: "="
     }
