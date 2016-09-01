@@ -1,7 +1,7 @@
 'use strict';
 (function(){
 
-  function Movement($state, PAR_Segment, IPT_Segment) {
+  function Movement($state, PAR_Segment, IPT_Segment, InstalledPart) {
     var ctrl = this;
 
     var movements = {};
@@ -26,11 +26,14 @@
 
     ctrl.movements = _.values(movements);
 
-    var removalTemplate =  '<div class="ui-grid-cell-contents" style="text-align:center;" ng-if="row.entity.SERR" ng-click="grid.appScope.$ctrl.editRemoval(grid, row)" ng-class="{grey : !row.entity.SERI}">'+
+    console.log(movements);
+
+    var removalTemplate =  '<div class="ui-grid-cell-contents" style="text-align:center;" ng-if="row.entity.PAR_Segment" ng-click="grid.appScope.$ctrl.editRemoval(grid, row)">'+
       '<span class="fa-stack"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-arrow-down fa-stack-1x"></i></span>'+
       '</div>';
-    var installationTemplate =  '<div class="ui-grid-cell-contents" style="text-align:center;" ng-if="row.entity.SERI" ng-click="grid.appScope.$ctrl.editInstallation(grid, row)" ng-class="{grey : !row.entity.installation}"">'+
-      '<span class="fa-stack"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-arrow-up fa-stack-1x"></i></span>'+
+    var installationTemplate =  '<div class="ui-grid-cell-contents" style="text-align:center;" >'+
+      '<span class="fa-stack" ng-if="row.entity.IPT_Segment" ng-click="grid.appScope.$ctrl.editInstallation(grid, row)"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-arrow-up fa-stack-1x"></i></span>'+
+      '<span class="fa-stack" ng-if="!row.entity.IPT_Segment" ng-click="grid.appScope.$ctrl.createInstallation(grid, row)"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-plus fa-stack-1x"></i></span>'+
       '</div>';
 
     ctrl.editRemoval = function(grid, row){    
@@ -40,6 +43,13 @@
 
     ctrl.editInstallation = function(grid, row){
       ctrl.installation = row.entity.IPT_Segment;
+    }
+
+    ctrl.createInstallation = function(grid, row){
+      InstalledPart.find(ctrl.ain + '/' + row.entity.CPI).then(function(position){
+        ctrl.installation = position.initInstallation(ctrl.hri);
+      })
+      
     }
 
     ctrl.movementsgrid = {
