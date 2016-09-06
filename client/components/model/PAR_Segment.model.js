@@ -69,6 +69,20 @@ angular.module('itechApp')
           isDeletable = isDeletable && checkLowerPart(this.InstalledPart);
 
           return isDeletable;
+        },
+        hasIPT_Segment : function() {
+          var ipt = this.InstalledPart.IPT_Segment ? this.InstalledPart.IPT_Segment : [];
+
+           function addLowerIPT(part){
+            _.forEach(part.lowerPart, function(lowerPart){
+              ipt = lowerPart.IPT_Segment ? _.concat(ipt, lowerPart.IPT_Segment, addLowerIPT(lowerPart)) : _.concat(ipt, addLowerIPT(lowerPart));
+            })
+            return ipt;
+          }
+
+          ipt = _.concat(ipt,addLowerIPT(this.InstalledPart));
+
+          return _.uniqBy(ipt, function(i){return i.CPI;});         
         }
       },
       beforeCreate : beforeCreatePARSegment,

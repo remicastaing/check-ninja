@@ -8,6 +8,11 @@ function Removal(PAR_Segment, $state, InstalledPart) {
 
   console.log(ctrl);
 
+  if (PAR_Segment.is(removal)) {
+    ctrl.installations = ctrl.removal.hasIPT_Segment();
+  }
+  
+
   this.save = function(){
 
     console.log(removal);

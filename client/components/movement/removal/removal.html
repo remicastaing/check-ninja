@@ -49,6 +49,20 @@
 
 <aging att = "$ctrl.removal.ATT_Segment" atn = "$ctrl.removal.ATN_Segment"></aging>
 
+<br>
+
+<div class="row" ng-if = "$ctrl.installations.length>0">
+  <div class="col-md-12">
+    <label for="ipt">Following Installations</label>
+    <div class="panel panel-default" id = "ipt">
+
+      <div class="panel-body">
+        <installations-list installations = "$ctrl.installations"></installations-list>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 

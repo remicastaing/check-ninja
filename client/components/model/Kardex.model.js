@@ -99,18 +99,17 @@ angular.module('itechApp')
           MPN : InstalledPart.MPN,
           SER : InstalledPart.SER,
           PDT: InstalledPart.PDT,      
-          status : InstalledPart.SER ? 'original' : 'none',
           AIN : AIN,
-          NHA : AIN + '/' + NHA,
+          NHA : NHA ? AIN + '/' + NHA : null,
+          $$treeLevel : 0 + InstalledPart.CLE -1
         };
         part.index = index++;
 
         if (InstalledPart.SER) {
           part.DOI = InstalledPart.DOI;
-        } else {}
+        }
 
         if (InstalledPart.hasOwnProperty('ATT_Segment')) {
-
 
           part.ATT_Segment = InstalledPart.ATT_Segment;
 
@@ -125,13 +124,12 @@ angular.module('itechApp')
           part.ATN_Segment = InstalledPart.ATN_Segment;
         }
 
-
         partList.push(part);
+
+
         if (InstalledPart.hasOwnProperty('InstalledPart')) {
-          part.$$treeLevel = 0 + InstalledPart.CLE -1,
           makePartList(InstalledPart.InstalledPart, InstalledPart.CPI);
         }
-
 
       });
 

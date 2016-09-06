@@ -41,15 +41,20 @@
             kardex = x2js.xml_str2json($fileContent);
 
             vm.kardex = kardex;
+
+            console.log(kardex);
             var AIN = kardex.Kardex.AircraftInformation.AID_Segment.AIN;
 
             if (_.isEqual(check.ScheduledMaintenance.HDR_Segment, kardex.Kardex.HDR_Segment) && _.isEqual(check.ScheduledMaintenance.ScheduledMaintenanceEvents.AID_Segment, kardex.Kardex.AircraftInformation.AID_Segment)) {
             	var partlist= Kardex.partList(kardex.Kardex.AircraftInformation.InstallDetails.InstalledPart,AIN);
+
+                console.log(partlist);
             	vm.gridOptions = {
     	        	data : partlist,
     	        	enableSorting: true,
     			    enableFiltering: true,
-    			    showTreeExpandNoChildren: true,
+    			    showTreeExpandNoChildren: false,
+                    treeRowHeaderAlwaysVisible : false,
     			    columnDefs: [
     			      { field: 'CPI', name: 'ATA', width: '10%' },
     			      { field: 'PDT', name: 'Description', width: '40%' },
