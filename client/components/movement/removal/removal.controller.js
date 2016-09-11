@@ -36,7 +36,8 @@ angular.module('itechApp')
     templateUrl: 'components/movement/removal/removal.html',
     controller: Removal,
     bindings: {
-	    removal: '='
+	    removal: '=',
+      onEditInstallation : '&?'
 	  }
   });
 

@@ -48,7 +48,7 @@
 
 <div ng-if = "$ctrl.formerRemoval">
   <label for="removal">Removal before</label>
-  <div class="panel panel-default" style = "cursor: pointer;" id = "removal" ng-click="$ctrl.switchToRemoval()">
+  <div class="panel panel-default" style = "cursor: pointer;" id = "removal" ng-click="$ctrl.onEditRemoval({removal: $ctrl.formerRemoval})">
     <div class="panel-body">
       <div class="row">
 

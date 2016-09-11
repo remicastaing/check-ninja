@@ -57,10 +57,6 @@
       console.log(ctrl.installation);
     }
 
-    ctrl.switchToRemoval = function (){
-      ctrl.removal = ctrl.formerRemoval;
-      ctrl.installation = null;
-    }
   };
 
 
@@ -70,9 +66,9 @@
     controller: Installation,
     bindings: {
       installation: '=',
-      removal : '=?',
       amc : "=",
-      ain: "="
+      ain: "=",
+      onEditRemoval : "&?"
     }
   });
 

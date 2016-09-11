@@ -49,4 +49,16 @@ angular.module('itechApp')
       vm.selectedfinding = finding;
     }
 
+    vm.editRemoval = function(removal){
+      console.log(removal);
+      vm.removal = removal;
+      vm.installation = null;
+    }
+
+    vm.editInstallation = function(installation){
+      console.log(installation);
+      vm.installation = installation;
+      vm.removal = null;
+    }
+
   });

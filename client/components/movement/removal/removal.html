@@ -57,7 +57,7 @@
     <div class="panel panel-default" id = "ipt">
 
       <div class="panel-body">
-        <installations-list installations = "$ctrl.installations"></installations-list>
+        <installations-list installations = "$ctrl.installations" on-edit-installation = "$ctrl.onEditInstallation({installation: installation})"></installations-list>
       </div>
     </div>
   </div>

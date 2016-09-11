@@ -4,23 +4,13 @@
 function SelectPosition(Kardex, $state) {
   var ctrl = this;
 
-  ctrl.editRemoval = function(position){
-    console.log(position);
-    ctrl.onEditRemoval({position: position});
-  }
 
   var removalTemplate =  '<div class="ui-grid-cell-contents" style="text-align:center;">'+
-    '<removal-button part = "row.entity" on-edit = "grid.appScope.$ctrl.editRemoval(position)"></removal-button>'+
-    '</div>'
-
-
-  ctrl.editInstallation = function(position){
-    console.log(position);
-    ctrl.onEditInstallation({position: position});
-  }
+    '<removal-button part = "row.entity" on-edit = "grid.appScope.$ctrl.editRemoval({position: position})"></removal-button>'+
+    '</div>';
 
   var installationTemplate =  '<div class="ui-grid-cell-contents" style="text-align:center;">'+
-  '<installation-button part = "row.entity" on-edit = "grid.appScope.$ctrl.editInstallation(position)"></installation-button>'+
+  '<installation-button part = "row.entity" on-edit = "grid.appScope.$ctrl.editInstallation({position: position})"></installation-button>'+
   '</div>';
 
   var CPITemplate = '<div class="ui-grid-cell-contents" ng-class = "{higher : row.entity.lowerPart.length}">'+
@@ -69,8 +59,8 @@ angular.module('itechApp')
     controller: SelectPosition,
     bindings: {
 	    parts: '<',
-      onEditRemoval: '&?',
-      onEditInstallation: '&?',
+      editRemoval: '&?',
+      editInstallation: '&?',
 	  }
   });
 
